@@ -1,0 +1,18 @@
+No Java, quando uma classe herda implementações de métodos default, de mais de uma interface, ela está herdando
+um tipo de herança múltipla. Exemplo:
+
+interface Corredor {
+    default void correr() {
+        // TO DO
+    }
+}
+
+interface Piloto {
+    default void correrRapido() {
+        // TO DO
+    }
+}
+
+public class Pessoa implements Corredor, Piloto {
+    // Aqui pode-se ou não dar @Override nos métodos herdados.
+}

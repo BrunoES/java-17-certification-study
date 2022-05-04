@@ -1,0 +1,5 @@
+ParallelStream: Executa as operações em cima do fluxo de dados de forma implícita, com basicamente
+a mesma estrutura do stream convencional.
+
+Extremamente fácil de transformar um código conveniconal em um código multithread, com todos os cuidados
+do código paralelo.

@@ -1,0 +1,19 @@
+Conceito SAM: Single Abstract Method, se uma interface possui apenas um método abstract, logo a implementação
+representada por um lambda, só pode ser a implementação do método abstrato, exemplo:
+
+new Thread(new Runnable() {
+			@Override
+			public void run() {
+				System.out.println("Olá Mundo");
+			}
+		}).run();;
+		
+new Thread(() -> System.out.println("Olá Mundo")).run();
+
+--------------------------------------------------------------------
+
+@FunctionalInterface
+Indica para o Java, que esta interfece precisa seguir o padrão SAM, caso esta interface tenha mais de um método,
+a interface não compilará.
+Obs: Não é obrigatória, porém garante que a interface seguirá o padrão SAM.
+

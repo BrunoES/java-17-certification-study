@@ -1,0 +1,7 @@
+Quando não é possível incluir a implementação padrão de um método em uma implementação específica,
+pode-se incluir o(s) métodos como staticos na interace.
+
+Os métodos static da interface só podem ser chamados através da interface, a classe que a implementação
+não herda estes métodos.
+
+Por padrão todo método de interface é abstract públic (menos os que possui implementação).

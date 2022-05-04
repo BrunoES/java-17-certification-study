@@ -1,0 +1,33 @@
+Métodos default em interfaces funcionam como métodos implementados em classes abstratadas,
+que são repassados por hierarquia para classes "filhas", caso elas não sobrescrevam este
+método default, a classe filha manterá a implementação da interface.
+
+Há um problema caso uma classe implemente mais de uma interface, onde ambas as interfaces possuem
+o mesmo método, com a mesma assinatura. Você precisa dizer qual método você quer que seja utilizado,
+por exemplo:
+NomeDaInterface.super.nomeDoMetodo();
+
+Ou então simplesmente dar @Override no método normalmente, e reimplementá-lo.
+
+------------------------------------------------------------------------------
+
+Herança de interfaces:
+Quando uma interface com método default, implementa outra interface com método default, a classe que
+implementa a interface filha "herda" o método da interface mãe, como se fosse da interface filha
+exemplo:
+
+interface Corredor {
+    default void correrRapido() {
+        // TO DO
+    }
+}
+
+interface Piloto extends Corredor {
+    // Se houver uma redefinição aqui de correrRapido, então a Implementação da interface mãe é desconsiderada.
+}
+
+static class Pessoa implements Piloto {
+
+}
+
+new Pessoa.correrRapido // Implementação de interface Corredor

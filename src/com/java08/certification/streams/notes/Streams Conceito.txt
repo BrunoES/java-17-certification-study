@@ -1,0 +1,8 @@
+Os Lambdas, o padrão SAM, e toda API funcional do java 8 foi feita para que pudéssemos utilizar streams;
+Stream é um Fluxo de dados.
+
+Stream: Loops implícitos;
+Do While, While, For: Loops Explícitos;
+
+Ter que controlar o loop é pior, pois temos que cuidar de variáveis de controle,
+de início, limite, tamanhos de filas, listas, arrays.

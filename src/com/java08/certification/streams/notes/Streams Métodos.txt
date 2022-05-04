@@ -1,0 +1,24 @@
+- Operações intermediárias
+
+forEach(lambda) -> percorre
+filter(lambda) -> aplica validação, se for true, aquele valor é válido.
+skip(n) -> pula elementos
+limit(n) -> limita quantos elementos serão processados
+distinct() -> não permite que o stream processe elementos repetidos (utilizando equals hashcode)
+map(predicate) -> transforma o objeto, por exemplo, em uma lista de números, multiplica o número
+e muitos outros métodos.
+
+Obs: Métodos do stream não modificam a lista original, apenas o fluxo do stream.
+
+- Operações finais
+
+Ao realizar uma operação final, não se consegue mais realizar operações no stream, exemplo:
+
+forEach - percorre
+count - quantidade de elementos
+min(comparator) - retorna o menor elemento do stream
+max(comparator) - retorna o maior elemento do stream
+.collect(Collectors.toList()) - converte o conjunto em uma lista
+.collect(Collectors.groupingBy(function) - converte o conjunto em grupos mediante o resultado da função.
+.collect(Collectors.joining() - concatena elementos de um stream de strings
+.collect(Collectors.joining(";") - concatena elementos de um stream de strings com um delimitador
