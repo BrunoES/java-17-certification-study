@@ -1,0 +1,59 @@
+Novas classes da API de datas do Java 8:
+
+LocalDate - Representa uma data
+
+LocalTime - Representa uma hora
+
+LocalDateTime - Representa uma Data / hora
+
+Instant - Representa um instante /momento na linha do tempo em milisegundos a partir de 01/01/1970T00:00:00
+  - Também pode representar Data ou Horas em GMT/UTC
+  - Armazena o instante no fuso horário 0, ou seja, sem timezone.
+  - Apenas a quantidade de milisegundos a partir de 01/01/1970T00:00:00
+  - Se quiser timezon precisa trabalhar este valor, para ser GMT-3 por exemplo, ou GMT + 3 ...
+  - Não armazena timezone.
+
+ZonedDateTime - LocalDateTime com Timezone (fuso horário)
+  - Exemplo: 02/11/1995 11:40:00 GMT-3 (America/Sao_Paulo)
+  - Armazena timezone.
+
+Obs: Nenhuma destas classes possui construtor.
+
+Exemplo das classes acima:
+2022-05-04
+22:40:06.624431
+2022-05-04T22:40:06.624751100
+2022-05-05T01:40:06.624751100Z
+2022-05-04T22:40:06.630431700-03:00[America/Sao_Paulo]
+
+*** Métodos minus e plus (exmeplos para LocalDate por ex): ***
+now.plusDays(1);
+now.plusMonths(1);
+now.plusWeeks(1);
+now.plusYears(1);
+now.minusDays(1);
+now.minusMonths(1);
+now.minusWeeks(1);
+now.minusYears(1);
+
+Retornam a própria instância para novas chamadas encadeadas:
+now.minusYears(1).plusDays(12);
+
+Obs: Não atualizam a instância, precisaria ser reatribuida:
+now = now.minusYears(1).plusDays(12);
+
+*** Métodos of, exemplos: ***
+
+LocalDate.of(1990, Month.AUGUST, 25));
+LocalTime.of(15, 10, 5, 1));
+
+LocalDateTime.of(localDate, localTime);
+LocalDateTime.of(1990, Month.AUGUST, 25, 15, 10, 5, 1);
+LocalDateTime.of(LocalDate.of(1990, Month.AUGUST, 25), LocalTime.of(15, 10, 5, 1));
+
+Instant.ofEpochMilli(50000L);
+
+ZonedDateTime.of(localDateTimeNow, ZoneId.of("America/Montevideo"));
+
+Irá falhar, pois apenas dias são suportados pelo Instant
+Ex: instantNow.plus(1, ChronoUnit.MONTHS);

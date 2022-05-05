@@ -1,0 +1,14 @@
+Novas classes da API de datas do Java 8:
+
+Period - Armazena um período de tempo com Datas.
+Represetação: P1970Y4M14D
+P- Period
+Y - year
+M - month
+D - day
+
+Duration - Armazena um período de tempo com Tempo (hora, minutos, segundos, milisegundos).
+PT - Duration
+H - hour
+M - minute
+S - second

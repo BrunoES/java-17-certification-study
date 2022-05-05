@@ -1,0 +1,13 @@
+Tenta resolver o problema de nullpointer.
+
+métodos
+
+isPresent() - Se o valor está preenchido
+get() - retorna o valor, mas pode ter um erroo se o elemento não existir;
+
+ifPresent(lambda / consumer) - Recebe uma lambda para a ação a ser feita com o valor (se o valor existe)
+orElse() - Possibilita passar um valor default no parentese caso o valor esteja vazio;
+orElseGet(lambda / consumer) -  Recebe uma lambda para ser feita uma operação caso o Optional não tenha um valor.
+orElseThrow(() -> NullPointerException("Valor Vazio")) - Lança uma exceção caso o Optional esteja vazio.
+
+OptionalInt - Optional do tipo primitivo int
