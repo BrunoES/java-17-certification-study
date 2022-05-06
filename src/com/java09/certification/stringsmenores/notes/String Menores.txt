@@ -1,0 +1,6 @@
+A partir do Java 9, o uso de memória para strings foi reduzido, passo a ser:
+1 byte por caractere;
++
+1 byte para o encoding;
+
+Executando uma classe que gera muitas strings é possível notar a diferença de uso de memória entre as versões 8 e 9 do Java.

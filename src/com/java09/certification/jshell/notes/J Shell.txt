@@ -1,0 +1,25 @@
+JShell
+REPL - Read Evaluate Print Loop
+
+Pode ser iniciado pelo cmd, (jshell command) ou ser executado a partir da pasta bin do Java.
+
+jshell -v   = modo verbose
+/exit       = sair
+Tab         = auto completa tudo
+			  Obs: Com Tab até o fim você consegue ver a documentação do método.
+/list      = Cada instrução digitada
+/list -all = Dados com 's' são instruções feitas pelo próprio JShell e também instruções que deram erro.
+Shift + Tab + i = Import classe que não existe e está na instrução
+
+* Se você declarar novamente um método ou variável, ele sobrescreve pelo novo;
+* Se declarar um método que utiliza uma variável que não existe, dará a seguinte mensagem:
+ created method teste2(), however, it cannot be invoked until variable teste is declared.
+ 
+ Quando é lançada uma exceção, não é mostrado a linha e coluna do erro, porém
+ é exibido a instrução #n e a linha do erro, ex:
+   Exception java.lang.RuntimeException
+       at imprime3 (#19:2)
+       at (#20:1)
+       
+
+ 

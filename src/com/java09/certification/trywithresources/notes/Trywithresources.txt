@@ -1,0 +1,8 @@
+No Java 9 você pode declarar recursos do Try-With-Resources fora do Try();
+o Try chama o close automaticamente, então os recursos utilizados dentro precisam
+implementar AutoCloseable;
+
+Cuidado ao utilizar, principalmente se for declarar recursos que podem ficar abertos
+fora do try, o que pode causar um erro, e poder deixar outros recursos abertos sem close:
+Conexão com banco, MQ, Input/Output Stream, Sockets, IO em geral.
+

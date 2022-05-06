@@ -1,0 +1,20 @@
+Static Factory Methods, criam instâncias a partir de métodos estáticos.
+
+Um construtor não tem um nome significativo
+Um método static que retorna uma instância, pode ter um nome significativo
+Um Factory Method provê Retorno flexível
+  Retornar subclasses por exemplo;
+
+exemplo de métodos Static Factory Methods:
+
+Optional.empty();
+Optional.of(100);
+Optional.ofNullable(null);
+Collections.unmodifiableList
+Integer.valueOf(100);
+List.of(1);       // Retorna Listas Imutáveis
+List.of(1,2); ... // Retorna Listas Imutáveis
+
+Obs: List.of(), até List.of(1,2,3) possui classes específicas para tratar
+a quantidade de elementos, com classes do tipo: List0, List1, List2. List3.
+A partir de 4 é ListN
