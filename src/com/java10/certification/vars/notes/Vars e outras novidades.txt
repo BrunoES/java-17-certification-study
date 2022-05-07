@@ -1,0 +1,83 @@
+ Var: Forma de declarar variáveis de forma mais enxuta.
+
+*var não é uma palavra reservada.*
+
+var é um nome de tipo reservado, exemplo, não podemos ter uma classe com nome var, mas com Var podemos.
+
+vars precisam ser inicializadas para que o seu tipo seja inferido, se não, não compilará, ex:
+var teste; // não compilará
+var teste = null // não compilará
+var r = () -> System.out.println("Teste");
+
+Não pode ter var em atributo de classe
+Não pode ter var em parâmetro de métodos e construtores
+Var não pode ser um tipo de retorno de um método
+---------------------------------------------------------------------------------
+
+Melhorias na execução de containers, exemplos:
+
+-XX:+UseContainerSupport = Habilitada por padrão, a JVM passa a ter consciência de que roda em um container.
+-XX:ActiveProcessorCount=count Quantidade de processadores permitidos
+-XX:InitialRamPercentage
+-XX:MaxRAMPercentage
+-XX:MinRamPercentage
+
+--------------------------------------------------------------------------------
+
+Versionamento do Java:
+
+No Java 9 era: $Major  $Minor $Security $Patch
+No Java 10 é:  $Featre $Interim $Update $Patch
+
+--------------------------------------------------------------------------------
+
+Novos métodos para copiar coleções:
+List.copyOf
+Map.copyOf
+Set.copyOf
+
+--------------------------------------------------------------------------------
+
+Novos collectors para Streams:
+
+Collectors.toUnmodifiableList()
+Collectors.toUnmodifiableMap()..
+Collectors.toUnmodifiableMap()
+Collectors.toUnmodifiableSet()
+
+--------------------------------------------------------------------------------
+
+Nova Alternativa ao Optional.get():
+Além de permanecer o .ger, foi criado um método orElseThrow() que retorna o valor, e devolde uma exceção se não tiver nada
+para ser retornado.
+Oprtional.orElseThrow
+
+--------------------------------------------------------------------------------
+
+Full GC Paralelo no G1:
+No Java 9, o Garbage Collector passou a ser o G1, porém quando o G1 não é suficiente,
+no Java 10 entra o Full GC Paralelo quando necessário.
+
+--------------------------------------------------------------------------------
+
+Geração de bytecode otimizada para for-each:
+ForEach com Iterate, sem contador.
+
+--------------------------------------------------------------------------------
+
+Inicialização do JShell foi otimizada.
+
+--------------------------------------------------------------------------------
+
+Novas Language tags em Locale:
+ por exemplo, Language tags são: PT-PT, PT-BR, EN.
+
+--------------------------------------------------------------------------------
+
+Applets não tem mais acesso ao getWebContext()
+
+--------------------------------------------------------------------------------
+
+Var Intersection Type
+
+Uma classe que "tem vários tipos ao mesmo tempo";
