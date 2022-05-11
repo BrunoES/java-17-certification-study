@@ -1,0 +1,42 @@
+Var + Lamba = No Java 11 começou a ser possível utilizar vars dentro de expressões Lambdas.
+
+Novo Cliente HTTP.
+HttpClient httpClient = HttpCliente.newBuilder().build();
+
+Novo método toArray, exemplo:
+Integer[] array = lista.toArray(Integer[]::new)
+
+Novos métodos String:
+isBlank() - Se contêm apenas espaços (caracteres vazios)
+lines() - Stream com as linhas da string
+repeat(int) - Repete a string existente
+strip() - trim melhorado com novos caracteres unicode que representam espaço em branco
+stripLeading() - Remove espaços em branco apenas da frente
+stripTrailing() - Remove espaços em branco apenas do fim
+
+Remoção dos módulos JavaEE e CORBA
+(JAX-WS, JAXB, CORBA)
+java.xml.ws
+java.xml.bind
+java.activation
+java.xml.ws.annotation
+java.corba
+java.transaction
+java.se.ee
+jdk.xml.ws
+jdk.xml.bind
+
+Unicode 10.0
+16,018 novos caracteres
+
+Eplison
+Garbage Collector
+No-op GC - Literalmente não faz nada.
+
+Java Flight Recorder (JFR)
+Já fazia parte do JDK Oracle, Agora faz parte do OpenJDK.
+
+Agora é possível executar arquivos .java, em vez de apenas arquivos .class (compila e executa na hora).
+java <arquivo.java>
+
+
