@@ -50,3 +50,33 @@ https://openjdk.java.net/jeps/341
 O CDS (Class Data Sharing) basicamente é um recurso de compartilhamento de dados de instâncias de classes core do Java, que podem ser
 compartilhadas entre várias aplicações, e que para isso, estas classes são compartilhadas na JVM, permitindo com que o tempo de
 inicialização de aplicações que utilizariam classes comunmente utilizadas no Java possa ser reduzido.
+
+
+File::mismatch  Method
+nio.file.Files
+Compara dois arquivos e encontra a posição do primeiro byte incompatível em seus conteúdos.
+
+Teeing Collector
+Um novo collector "Tee" (adaptador), foi adicionado. Permite que seja passada duas funções como parâmetro,
+por exemplo: Uma função de soma, e outra função de contador, possibilitando um merge das funções, aplicando 
+uma média como resultado, exemplo:
+@Test
+public void givenSetOfNumbers_thenCalculateAverage() {
+    double mean = Stream.of(1, 2, 3, 4, 5)
+      .collect(Collectors.teeing(Collectors.summingDouble(i -> i), 
+        Collectors.counting(), (sum, count) -> sum / count));
+    assertEquals(3.0, mean);
+}
+Obs: sum e count na terceira função, são os resultados da primeira e segunda funções;
+
+
+Compact Number Formatting
+De acordo com o Locale do usuário, os CompactNumbers variam, por exemplo:
+Locale US:
+SHORT: 10k
+LONG:  10 thousand
+
+Exemplos:
+NumberFormat.getCompactNumberInstance(new Locale("en", "US"), NumberFormat.Style.SHORT);
+NumberFormat.getCompactNumberInstance(new Locale("en", "US"), NumberFormat.Style.LONG);
+

@@ -1,5 +1,10 @@
 package com.java12.certification.overview;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class Java12 {
 
 	public static void main (String[] args) {
@@ -57,6 +62,30 @@ public class Java12 {
 		String transformedTest1 = text.transform(x -> new StringBuilder(x).reverse().toString());
 		System.out.println(transformedTest0);
 		System.out.println(transformedTest1);
+		
+		// Teeing Collector
+		// Exemplo:
+		/*
+		 * Um novo collector "Tee" (adaptador), foi adicionado. Permite que seja passada duas funções como parâmetro,
+	 	 * por exemplo: Uma função de soma, e outra função de contador, possibilitando um merge das funções, aplicando 
+		 * uma média como resultado, exemplo:
+		 */
+		double mean = Stream.of(1, 2, 3, 4, 5)
+			      .collect(Collectors.teeing(Collectors.summingDouble(Integer::valueOf), 
+			        Collectors.counting(), (sum, count) -> sum / count));
+		
+		
+		// Compact Number Formatting:
+		NumberFormat nf1 = NumberFormat.getCompactNumberInstance(new Locale("en", "US"), NumberFormat.Style.SHORT);
+		NumberFormat nf2 = NumberFormat.getCompactNumberInstance(new Locale("en", "US"), NumberFormat.Style.LONG);
+		
+		/* Exemplos:
+		 * Locale US:
+		 * SHORT: 10k
+		 * LONG:  10 thousand
+		 */
+		System.out.println(nf1.format(10000));
+		System.out.println(nf2.format(10000));
 		
 	}
 }
