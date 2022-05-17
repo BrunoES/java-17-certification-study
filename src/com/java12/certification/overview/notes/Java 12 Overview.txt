@@ -1,0 +1,52 @@
+Removido  literais string puras da JDK 12;
+Exemplo:
+String html = `<html>
+                   <body>
+                       <p>Hello World.</p>
+                   </body>
+               </html>
+              `;
+
+Novos Switch cases, exemplos:
+
+// Switch case:
+String day = "MONDAY";
+switch (day) {
+    case "MONDAY", "FRIDAY", "SUNDAY" -> System.out.println(1);
+    case "TUESDAY" -> System.out.println(2);
+    case "WEDNESDAY" -> System.out.println(3);
+}
+
+// Switch case com return de valor
+int i =  switch (day) {
+    case "MONDAY", "FRIDAY", "SUNDAY" -> 1;
+    case "TUESDAY" -> 2;
+    case "WEDNESDAY" -> 3;
+    default -> 0; // Default se torna obrigatório.
+};
+
+// New String methods
+// indent:
+String code0 = code.indent(0); // remove spaces at the beginning of each line
+String code1 = code.indent(1); // add spaces at the beginning of each line
+
+// transform:
+String transformedTest0 = text.transform(x -> x.trim()); // expect a function parameter to transform the result string.
+String transformedTest1 = text.transform(x -> new StringBuilder(x).reverse().toString());
+
+Coletor G1 aprimorado
+Permite que o usuário defina um tempo de pausa pré-definido, com isso, o usuário passa a ter controle sobre o processo de pausa,
+principalmente em aplicações cloud, onde os recursos e o tempo de processamento é pago.
+Para isso, o G1 divide as áreas de coleta na aplicação em grupo obrigatórios e opinionais, para que seja possível abortar os
+opcionais quando necessário, para não exceder o tempo máximo estiuplado pelo usuário.
+
+Novo coletor chamado Shenandoah (desenvolvido pela RedHat)
+Principal diferença para o G1 é que ele utiliza "Brooks forwarding pointers" (campo adicional de referência, como se fosse um ponteiro).
+Cada vez que um recurso é copiado para um novo local no head, esta ref é atualizada. Este coleto possui uma penalidade de desempenho e
+é indicado para pilhas maiores (possui tempos de pausa independentes do tamanho do heap).
+
+JEP 341
+https://openjdk.java.net/jeps/341
+O CDS (Class Data Sharing) basicamente é um recurso de compartilhamento de dados de instâncias de classes core do Java, que podem ser
+compartilhadas entre várias aplicações, e que para isso, estas classes são compartilhadas na JVM, permitindo com que o tempo de
+inicialização de aplicações que utilizariam classes comunmente utilizadas no Java possa ser reduzido.
