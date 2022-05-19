@@ -1,0 +1,55 @@
+// Java 13:
+
+Text Blocks:
+String jsonBlock = """
+
+// Incrementação do switch expression:
+Criação do termo yield para retornar um valor em um bloco de um switch case;
+
+
+// Novos métodos string:
+		
+stripIndent(); // Remove a identação dos blocos.
+translateEscapes()); // * expões o comportamento da tradução das sequências de escape nas strings.
+"Value: %s".formatted(teste1); // Uma reformulação do String.format("Value: %s", value);
+
+
+* Melhorias na API de NIO * VER
+NIO:
+https://medium.com/@antonio.gabriel/java-io-java-nio-e-nio-2-quando-utilizar-8c900b1c57a1
+
+* Melhorias na implementação de Socket:
+
+* Melhorias na JVM: *
+JDK 13 Security Enhancements
+https://seanjmullan.org/blog/2019/08/05/jdk13
+
+JDK 13 Support for Unicode 12.1
+https://bugs.openjdk.java.net/browse/JDK-8221431
+
+Arquivos CDS Dinâmicos (Dynamic CDS Archives)
+No JDK 13, passou a ser possível setar a JVM para gerar automáticamente o CDS daquele aplicativo
+ao sair da aplicação, por exemplo:
+java -XX:ArchiveClassesAtExit=<archive filename> -cp <app jar> AppName
+
+Para executar o aplicativo, utilizando o mesmo arquivo CDS gerado, deve-se utilizar:
+java -XX:SharedArchiveFile=<archive filename> -cp <app jar> AppName
+
+Apis Removidas:
+http://cr.openjdk.java.net/~iris/se/13/latestSpec/#APIs-proposed-for-removal
+
+* ZGC - Z Garbage Collector: Uncommit Unused Memory
+Com o ZGC, as memórias não comitadas são retornadas ao sistema operacional por default, até que um
+tamanho mínimo de heapSize seja alcançado.
+
+Others:
+Apart from the JEPs listed above, Java 13 has given us a few more notable changes:
+
+java.nio – method FileSystems.newFileSystem(Path, Map<String, ?>) added
+java.time – new official Japanese era name added
+javax.crypto – support for MS Cryptography Next Generation (CNG)
+javax.security – property jdk.sasl.disabledMechanisms added to disable SASL mechanisms
+javax.xml.crypto – new String constants introduced to represent Canonical XML 1.1 URIs
+javax.xml.parsers – new methods added to instantiate DOM and SAX factories with namespaces support
+Unicode support upgraded to version 12.1
+Support added for Kerberos principal name canonicalization and cross-realm referrals
