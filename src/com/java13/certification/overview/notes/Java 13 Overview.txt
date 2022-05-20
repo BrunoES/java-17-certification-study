@@ -3,22 +3,52 @@
 Text Blocks:
 String jsonBlock = """
 
-// IncrementaÁ„o do switch expression:
-CriaÁ„o do termo yield para retornar um valor em um bloco de um switch case;
+// Incrementa√ß√£o do switch expression:
+Cria√ß√£o do termo yield para retornar um valor em um bloco de um switch case;
 
 
-// Novos mÈtodos string:
+
+// Novos m√©todos string:
 		
-stripIndent(); // Remove a identaÁ„o dos blocos.
-translateEscapes()); // * expıes o comportamento da traduÁ„o das sequÍncias de escape nas strings.
-"Value: %s".formatted(teste1); // Uma reformulaÁ„o do String.format("Value: %s", value);
+stripIndent(); // Remove a identa√ß√£o dos blocos.
+translateEscapes()); // * exp√µes o comportamento da tradu√ß√£o das sequ√™ncias de escape nas strings.
+"Value: %s".formatted(teste1); // Uma reformula√ß√£o do String.format("Value: %s", value);
+
+
 
 
 * Melhorias na API de NIO * VER
 NIO:
 https://medium.com/@antonio.gabriel/java-io-java-nio-e-nio-2-quando-utilizar-8c900b1c57a1
 
-* Melhorias na implementaÁ„o de Socket:
+FileSystems.newFileSystem Method:
+newFileSystem(Path)
+newFileSystem(Path, Map<String, ?>)
+newFileSystem(Path, Map<String, ?>, ClassLoader)
+
+Files.isHidden Method:
+Files.isHidden should return true for hidden directories on Windows
+
+Files.createSymbolicLink Method:
+should use SYMBOLIC_LINK_FLAG_ALLOW_UNPRIVILEGED_CREATE (win)
+
+
+
+
+
+* Melhorias na implementa√ß√£o de Socket:
+Pra utilizar a implementa√ß√£o legada, deve-se utilizar o seguinte par√¢metro na JVM: -Djdk.net.usePlainSocketImpl.
+
+Implementa√ß√£o antiga de socket (desde o java 1.0):
+SocketImpl
+
+Nova implementa√ß√£o de socket:
+NioSocketImpl
+
+Nova implementa√ß√£o procura resolver problemas de concorr√™ncia.
+
+
+
 
 * Melhorias na JVM: *
 JDK 13 Security Enhancements
@@ -27,29 +57,41 @@ https://seanjmullan.org/blog/2019/08/05/jdk13
 JDK 13 Support for Unicode 12.1
 https://bugs.openjdk.java.net/browse/JDK-8221431
 
-Arquivos CDS Din‚micos (Dynamic CDS Archives)
-No JDK 13, passou a ser possÌvel setar a JVM para gerar autom·ticamente o CDS daquele aplicativo
-ao sair da aplicaÁ„o, por exemplo:
+
+
+
+
+Arquivos CDS Din√¢micos (Dynamic CDS Archives)
+No JDK 13, passou a ser poss√≠vel setar a JVM para gerar autom√°ticamente o CDS daquele aplicativo
+ao sair da aplica√ß√£o, por exemplo:
 java -XX:ArchiveClassesAtExit=<archive filename> -cp <app jar> AppName
 
 Para executar o aplicativo, utilizando o mesmo arquivo CDS gerado, deve-se utilizar:
 java -XX:SharedArchiveFile=<archive filename> -cp <app jar> AppName
 
+
+
+
+
 Apis Removidas:
 http://cr.openjdk.java.net/~iris/se/13/latestSpec/#APIs-proposed-for-removal
 
 * ZGC - Z Garbage Collector: Uncommit Unused Memory
-Com o ZGC, as memÛrias n„o comitadas s„o retornadas ao sistema operacional por default, atÈ que um
-tamanho mÌnimo de heapSize seja alcanÁado.
+Com o ZGC, as mem√≥rias n√£o comitadas s√£o retornadas ao sistema operacional por default, at√© que um
+tamanho m√≠nimo de heapSize seja alcan√ßado.
+
+
+
+
 
 Others:
 Apart from the JEPs listed above, Java 13 has given us a few more notable changes:
 
-java.nio ñ method FileSystems.newFileSystem(Path, Map<String, ?>) added
-java.time ñ new official Japanese era name added
-javax.crypto ñ support for MS Cryptography Next Generation (CNG)
-javax.security ñ property jdk.sasl.disabledMechanisms added to disable SASL mechanisms
-javax.xml.crypto ñ new String constants introduced to represent Canonical XML 1.1 URIs
-javax.xml.parsers ñ new methods added to instantiate DOM and SAX factories with namespaces support
+java.nio ‚Äì method FileSystems.newFileSystem(Path, Map<String, ?>) added
+java.time ‚Äì new official Japanese era name added
+javax.crypto ‚Äì support for MS Cryptography Next Generation (CNG)
+javax.security ‚Äì property jdk.sasl.disabledMechanisms added to disable SASL mechanisms
+javax.xml.crypto ‚Äì new String constants introduced to represent Canonical XML 1.1 URIs
+javax.xml.parsers ‚Äì new methods added to instantiate DOM and SAX factories with namespaces support
 Unicode support upgraded to version 12.1
 Support added for Kerberos principal name canonicalization and cross-realm referrals

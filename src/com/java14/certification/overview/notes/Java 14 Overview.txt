@@ -1,0 +1,29 @@
+// Java 14:
+
+// Nova forma de utilização do instance of
+String teste = "";
+// boolean a = ((teste instanceof String abc) && abc.equals(teste));
+
+
+Packaging Tool (incubator)
+Permite empacotar aplicativos java em imagens nativas windows, linux e macOs.
+
+NUMA-Aware Memory Allocation for G1
+Essa feature melhora o desempenho geral do Garbage Collector G1 em sistemas NUMA (Non-Uniform Memory Access).
+
+JFR Event Streaming:
+Expõe os dados do JDK Flight Recorder para monitoramento externo, simplicando o acesso aos dados para outras
+ferramentas ou sistemas.
+
+Non-Volatile Mapped Byte Buffers
+Adiciona um modo de mapeamento de arquivo para o JDK ao usar memória não volátil. A natureza persistente da 
+memória não volátil altera várias suposições de persistência e desempenho que podem ser aproveitadas com essa feature .
+
+Helpful NullPointerExceptions
+Melhora as stacks de erros de NullPointerExceptions, descrevendo com precisão qual variável ou objeto era nulo, e com maiores
+algumas informações úteis.
+
+Java Records:
+https://www.baeldung.com/java-record-keyword#:~:text=The%20Basics,generated%20by%20the%20Java%20compiler.
+Records em Java são basicamente classes de dados, perfeitos para utilização como VOs, DTOs, e assim por diante;
+Como se fosse uma mistura entre struct (C) e uma Classe de fato.

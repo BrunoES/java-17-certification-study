@@ -1,8 +1,14 @@
 package com.java13.certification.overview;
 
+import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.HashMap;
+
 public class Java13 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		// Os text bloks vieram agora para o Java 13:
 		String jsonBlock = """
@@ -10,6 +16,8 @@ public class Java13 {
 					audience; "World",
 					punctuation: "!"
 				""";
+		
+		
 		
 		// Incrementação do switch expression:
 		// exemplo:
@@ -25,6 +33,8 @@ public class Java13 {
 			default -> 0;
 		};
 		
+		
+		
 		// Novos métodos string:
 		String teste1 = "	String teste = \"teste\";";
 		String teste2 = "Hey, \\n This is not normally a line break.";
@@ -35,9 +45,21 @@ public class Java13 {
 		"Value: %s".formatted(teste1); // Uma reformulação do String.format("Value: %s", value);
 		
 		
+		
 		// ** ver: Melhorias no NIO **
+		// Novos métodos:
+		FileSystems.newFileSystem(Path.of(""));
+		FileSystems.newFileSystem(Path.of(""), new HashMap<String, String>());
+		FileSystems.newFileSystem(Path.of(""), new HashMap<String, String>(), Java13.class.getClassLoader());
 		
+		// Files.isHidden should return true for hidden directories on Windows
+		Files.isHidden(Path.of(""));
 		
+		// should use SYMBOLIC_LINK_FLAG_ALLOW_UNPRIVILEGED_CREATE (windows)
+		// Files.createSymbolicLink(Path.of(""), Path.of(""), FileAttribute<T>);
+		
+		// Add absolute bulk put and get methods
+		//ByteBuffer ?
 		
 	}
 
