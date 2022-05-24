@@ -1,0 +1,87 @@
+// Java 15:
+
+Implementação de novo algorítimo de criptografia:
+Edwards-Curve Digital Signature Algorithm (EdDSA)
+
+Sealed Classes:
+Implementação que permite que uma classe mãe tenha explicitamente quais classes podem extendê-la.
+
+All permitted subclasses must belong to the same module as the sealed class.
+Every permitted subclass must directly extend the sealed class.
+Every permitted subclass must choose a modifier to describe how it continues the sealing initiated by its superclass:
+Every permitted subclass must define a modifier: final, sealed, or non-sealed.
+
+
+
+Hidden Classes:
+Introduce hidden classes, which are classes that cannot be used directly by the bytecode of other classes.
+Hidden classes are intended for use by frameworks that generate classes at run time and use them indirectly,
+via reflection. A hidden class may be defined as a member of an access control nest, and may be unloaded
+independently of other classes.
+São classes que não podem ser usadas diretamente pelo bytecode de outras classes. As classes ocultas destinam-se
+ao uso de estruturas que geram classes em tempo de execução e as usam indiretamente, via reflexão. Uma classe
+oculta pode ser definida como um membro de um ninho de controle de acesso e pode ser descarregada
+independentemente de outras classes.
+
+
+
+Nashorm Javascript Engine removido.
+Marcado para remoção na JDK 11, foi removido agora na JDK 15.
+
+
+
+
+Pattern Matching for instanceof (Second Preview): Melhorias na funcionalidade "instanceof" introduzida no Java 14.
+Reintroduzido como preview, sem modificações em relação ao JDK 14, para colher mais feedbacks.
+
+
+
+Reimplement the Legacy DatagramSocket API
+Replace the underlying implementations of the java.net.DatagramSocket and java.net.MulticastSocket
+APIs with simpler and more modern implementations that are easy to maintain and debug.
+The new implementations will be easy to adapt to work with virtual threads, currently being explored
+in Project Loom. This is a follow-on to JEP 353, which already reimplemented the legacy Socket API.
+
+
+
+
+    ZGC: A Scalable Low-Latency Garbage Collector: O ZGC foi integrado ao JDK 11 pelo JEP 333.
+Novos recursos de tamanho e complexidade são melhor introduzidos com cuidado e gradualmente,
+tornando-o um recurso experimental. Isso ajudou a definir as expectativas dos usuários e permitiu
+que eles fornecessem feedback sem precisar fazer o download ou criar um binário JDK separado, o que
+seria o caso se o desenvolvimento do ZGC continuasse fora do JDK:
+
+Além dos aprimoramentos existentes, ele também aprimora os recursos importantes, conforme indicado abaixo:
+Descarregamento simultâneo de classe
+Remoção de memória não utilizada (JEP 351)
+Tamanho máximo de heap aumentado de 4 TB para 16 TB
+Tamanho mínimo do heap reduzido para 8 MB
+-XX: SoftMaxHeapSize
+Suporte para o perfilador de vazamento JFR
+Suporte para compartilhamento de dados de classe
+Espaços de endereço limitados e descontínuos
+Suporte para colocar a pilha na NVRAM
+Melhor conhecimento da NUMA
+Pré-toque no heap multithread
+
+
+Text Blocks: Incluido definitivamente na JDK.
+GC Shenandoah Incluido definitivamente na JDK.
+
+
+Remove the Solaris and SPARC Ports:
+Remover todo o código-fonte de suporte para Solaris / SPARC, Solaris / x64 e Linux / SPARC. Essas "ports"
+foram marcadas para remoção no JDK 14 com a intenção expressa de removê-las em uma liberação futura.
+
+
+Foreign-Memory Access API (Second Incubator): Incluso na JDK 14, refinado na JDK 15.
+Introduz uma API para permitir que os programas Java acessem com segurança e eficiência a memória externa fora do heap Java.
+
+
+Java Records: Re-Preview dos Records incluídos no JDK 14, agora no Java 15.
+
+
+Deprecate RMI Activation for Removal: Descontinua o mecanismo de "Ativação RMI" para remoção futura. A ativação da RMI é uma
+parte obsoleta da RMI que é opcional desde o Java 8. Nenhuma outra parte da RMI será descontinuada.
+Além disso, a funcionalidade de melhoria das mensagens de NullPointerException implementada na versão 14 sob a JEP 358 agora
+está como default e não é necessário passar o parâmetro XX:+ShowCodeDetailsInExceptionMessages.
