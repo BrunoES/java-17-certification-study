@@ -1,0 +1,116 @@
+// Java 16:
+
+Pattern Matching.
+Incluso na JDK 14 como preview, e re-preview na JDK 15, volta agora também
+na JDK 16 com algumns refinamentos:
+
+Pattern matching for instanceof was proposed by JEP 305 and delivered in JDK 14 as a preview feature. It was re-proposed by JEP 375 and
+delivered in JDK 15 for a second round of preview.
+
+Lift the restriction that pattern variables are implicitly final, to reduce asymmetries between local variables and pattern variables.
+Torna as variávels locais do patter implicitamente final.
+
+Make it a compile-time error for a pattern instanceof expression to compare an expression of type S against a pattern of type T, where S is a subtype of T.
+(This instanceof expression will always succeed and is then pointless. The opposite case, where a pattern match will always fail, is already a compile-time error.)
+Faz com que operações de instanceof que sempre vão retornar true ou false resultem em erro de compilação, por ex:
+Fazer um A instanceof B, sendo que A é um subtype de B, ou então um instanceof onde sempre retornará falso.
+
+
+
+Records.
+Incluso na JDK 14 como preview, e re-preview na JDK 15, volta agora também
+na JDK 16 com algumns refinamentos:
+
+In the first preview, canonical constructors were required to be public. In the second preview, if the canonical constructor is implicitly
+declared then its access modifier is the same as the record class; if the canonical constructor is explicitly declared then its access modifier must provide
+at least as much access as the record class.
+
+The meaning of the @Override annotation was extended to include the case where the annotated method is an explicitly declared accessor
+method for a record component.
+
+To enforce the intended use of compact constructors, it became a compile-time error to assign to any of the
+instance fields in the constructor body.
+
+The ability to declare local record classes, local enum classes, and local interfaces was introduced.
+
+This JEP proposes to finalize the feature in JDK 16, with the following refinement:
+Relax the longstanding restriction whereby an inner class cannot declare a member that is explicitly or implicitly static. This will become legal and,
+in particular, will allow an inner class to declare a member that is a record class.
+
+
+
+
+JEP 376 ZGC Concurrent Thread Processing
+Move o processamento da pilha de threads do ZGC de pontos seguros para uma fase simultânea, permitindo pausas de menos de milissegundos dentro
+dos pontos seguros de GC, mesmo em grandes heaps.
+
+
+
+
+Elastic Metaspace
+te recurso retorna a memória de metadados de classe HotSpot VM não utilizada (ou seja, meta-espaço) para o sistema operacional mais prontamente.
+O novo esquema aloca memória metaspace em pedaços menores, reduz a sobrecarga e a fragmentação do carregador de classes. Ele melhora a elasticidade,
+retornando a memória meta espacial não utilizada para o sistema operacional.
+
+
+Unix-Domain Socket Channels*
+
+
+
+Packaging Tool
+Agora se torna uma production-ready feature.
+The only substantive change relative to JEP 343 is that we replaced the --bind-services option with the more general --jlink-options option.
+
+Esse recurso foi introduzido pela primeira vez como um módulo incubado no Java 14. Essa ferramenta permite empacotar aplicativos Java autocontidos.
+Ele oferece suporte a formatos nativos para oferecer aos usuários finais uma experiência de instalação natural. Esses formatos incluem msi e exe
+no Windows, pkg e dmg no macOS e deb e rpm no Linux.
+
+
+
+Warning for Value-Based Classes
+Classes wrapper de valor, como por exemplo: Integer, Double, Boolean, estão agora com seus construtores marcados como forRemoval=true.
+Ex: 
+public Integer(int value) {
+    this.value = value;
+}
+
+
+
+Strongly Encapsulate JDK Internals by default
+O acesso à pacotes de APIs internas críticas da JDK vai passar a ser negado a partir da JDK 16. Da JDK 9 até a 15, isso gerava apenas
+um warning, agora o padrão será negar o acesso (indicador --illegal-acess).
+Por linha de comando ainda é possível acessá-los, porém no futuro será possível apenas liberar um a um com o comando --add-opens.
+
+
+
+Vector API (Incubator)*
+
+
+
+Foreign Linker API (Incubator)
+Uma nova API que oferece acesso puro ao código nativo Java com tipagem estática (visa substituir o JNI - Java Native Interface)
+
+
+
+Foreign Memory Access API (3rd Incubator)
+Incluso na JDK 14 como preview, e re-preview na JDK 15, volta agora também
+na JDK 16 com algumns refinamentos:
+
+A clearer separation of roles between the MemorySegment and MemoryAddress interfaces;
+A new interface, MemoryAccess, which provides common static memory accessors so as to minimize the need for the VarHandle API in simple cases;
+Support for shared segments; and
+
+Fornece a base para a API do Linker Estrangeiro (Foreign Linker API).
+
+
+
+Sealed Classes (2nd Preview)
+
+Incluso na JDK 15 como preview, agora é re-preview na JDK 16 com alguns refinamentos:
+Specify the notion of a contextual keyword, superseding the prior notions of restricted identifier and restricted keyword in the JLS.
+Introduce the character sequences sealed, non-sealed, and permits as contextual keywords.
+
+As with anonymous classes and lambda expressions, local classes may not be subclasses of sealed classes when determining the implicitly declared
+permitted subclasses of a sealed class or sealed interface.
+
+Enhance narrowing reference conversion to perform stricter checking of cast conversions with respect to sealed type hierarchies
