@@ -1,0 +1,29 @@
+Sealed Classes:
+Implementadas como preview na JDK 15, e como re-preview na JDK 16,
+agora entra definitivamente na JDK 17.
+
+Pattern Matching for switch (Preview):
+Introduzido no JDK 14, foi reintroduzido na JDK 15 sem mudanças.
+Sofreu refinamentos na JDK 16, e agora foi introduzido como preview no JDK 17
+para Switch cases, ou seja, pattern matching de instanceof dentro de switch cases.
+
+static String formatterPatternSwitch(Object o) {
+ return switch (o) {
+     case Integer i -> String.format("int %d", i);
+     case Long l -> String.format("long %d", l);
+     case Double d  -> String.format("double %f", d);
+     case String s  -> String.format("String %s", s);
+     default     -> o.toString();
+ };
+}
+
+JEP 356: Gerador de número pseudo-aleatório aprimorado
+Atualizações para o java.util.random melhora a interoperabilidade de diferentes PRNGs
+(geradores de números pseudo-aleatórios) e torna mais fácil solicitar um algoritmo com base em requisitos,
+em vez de codificar uma implementação específica. 
+
+JEP 382: Novo canal de renderização do macOS
+
+JEP 415: Filtros de desserialização específicos do contexto
+
+JEP 306: Restaurar a semântica de ponto flutuante sempre restrita
