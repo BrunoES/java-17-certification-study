@@ -1,0 +1,13 @@
+Atribuições como essa, jogam o valor de B e C para A:
+a = b = c;
+
+--------------
+Todas estas declarações de float estão inválidas.
+
+float f1 = _12.345F; // Line 1
+float f2 = 12_.345F; // Line 2
+float f3 = 12._345F; // Line 3
+float f4 = 12.345_F; // Line 4
+float f5 = 12.345F_; // Line 5
+
+Obs: Ver o que siginifica o _ na declaração de float.

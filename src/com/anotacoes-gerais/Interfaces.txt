@@ -1,0 +1,61 @@
+Todo atributo de interface é por padrão:
+public, static, e final.
+
+--------------
+
+Métodos static definidos em interfaces, não podem ser chamados a partir do objeto da classe que a implementa, exemplo:
+Foo - Interface que contêm método static:
+Bar - Classe que implementar Foo
+Certo: Foo.staticMethod()
+Errado Foo foo = new Bar()
+       foo.staticMethod
+
+--------------
+
+Em caso de implementação de múltiplas interfaces que possuem os mesmos atributos, será dado erro de campos ambíguos;
+Em caso de métodos abstratos com a mesma assinatura em ambas as interfaces, não há problema, o Override é feito normalmente.
+
+interface Foo {
+       String myField = "Foo";
+       void myMethod();
+}
+
+interface Bar {
+       String myField = "Bar";
+       void myMethod();
+}
+
+public class Test implements Foo, Bar { // Line 1
+	@Override // Line 2
+	public void myMethod() {
+		System.out.println(myField); // Line 3
+	}
+	
+	public static void main(String[] args) {
+	Test test = new Test();
+	test.myMethod(); // Line 4
+	}
+}
+
+--------------
+
+Uma interface que possua um atributo igual à um atributo da classe que a implementa, não causa erros. Porém o que vale é sempre o atributo do Type definido à esquerda, exemplo:
+Foo foo = new Bar();
+Bar bar = new Bar();
+Sendo Foo a interface, e Bar a Classe que implementa.
+
+--------------
+
+Quando uma classe abstrata "implements" uma interface, ela não precisa implementar os métodos definidos nela.
+
+--------------
+
+Métodos abstratos também podem definir throws em sua declaração.
+Exemplo:
+void m() throws Exception;
+
+Portanto, não é obrigatório o throws por lado do implementador (não faz parte da assinatura)
+--------------
+
+
+

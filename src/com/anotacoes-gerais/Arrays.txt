@@ -1,0 +1,30 @@
+Declações válidas de matriz:
+int[][] matrix2 = new int[2][];
+int[][] matrix2 = new int[2][1];
+Errado: Do lado esquerdo declarar
+        Declarar quantidade de coluna sem declarar quantidade de linhas
+        Não declarar nada
+
+--------------
+
+Retorna -1 Se não há incompatibilidade entre o conteúdo dos arrays, e se houver, retorna o índice da incompatibilidade.
+Arrays.mismatch(array1, array2);
+Arrays.mismatch(array1, begin, end, array2, begin, end);
+
+--------------
+
+Arrays.copyOf(array1, 1);
+Copia o conteúdo de array1, limitado até a posição 1, ou seja, só copiará 1 elemento.
+
+--------------
+
+Arrays e MATRIZES começam do índice 0.
+
+--------------
+
+Isso compila:
+int element = array[index = 1]++;
+
+--------------
+
+

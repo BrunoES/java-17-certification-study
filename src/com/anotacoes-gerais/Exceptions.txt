@@ -1,0 +1,31 @@
+A cláusula catch tem que ser capaz de tratar todas as possíveis exceptions que são lançadas.
+Exemplo:
+Erro de compilação: Uma classe dentro do bloco try daz throw de RuntimeException, porém o catch trata apenas IOEXception.
+
+--------------
+
+Quando é feito um try catch, caso exista um catch que nunca será utilizado (porque já tem um catch mais genérico), o código
+não compilará:
+Ex: Unreachable catch block for IOException. It is already handled by the catch block for Exception
+
+--------------
+
+RuntimeException: Não-verificadas, não precisam ser tratadas com try /catch, ou serem passadas adiante com throws (apenas na origem precisa ser lançada com throws).
+Exception: Verificadas, precisam ser tratadas com try /catch, ou serem passadas adiante com throws.
+
+-------------
+
+Caso exista um catch mais genérico abaixo de um catch específico, este catch genérico não será alcançado.
+    try {
+        throw new FileNotFoundException();
+    } catch (IOException e) {
+        System.out.println("FileNotFoundException");
+    } catch (Exception e) { // Line 2
+        System.out.println("Test");
+    }
+
+-------------
+
+
+
+-------------

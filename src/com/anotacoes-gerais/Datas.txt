@@ -1,0 +1,5 @@
+LocalDate:
+Válido:
+    LocalDate.of(2019,1,1);
+    LocalDate.ofYearDay(2019,1);
+    LocalDate.parse("2019-01-01");

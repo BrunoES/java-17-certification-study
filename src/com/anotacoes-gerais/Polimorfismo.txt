@@ -1,0 +1,24 @@
+Métodos não implementados em classes abstratas, exigem declaração também na classe filha,
+assim como interfaces.
+
+Overloading vs Overriding:
+https://www.journaldev.com/32182/overriding-vs-overloading-in-java#:~:text=What%20is%20Overloading%20and%20Overriding,child%20class%2C%20it's%20called%20Overriding.
+Exemplo:
+#
+Correto:
+    Classe mãe: private List getDados(List dados);
+    Override: private List getDados(List dados);
+
+    Classe mãe: private List getDados(List dados);
+    Override: private ArrayList getDados(List dados);
+#
+Errado:
+    Classe mãe: private List getDados(List dados);
+    Override: private List getDados(Collection dados);
+
+    Classe mãe: private List getDados(List dados);
+    Override: private Collection getDados(List dados);
+
+    Classe mãe: private List getDados(List dados);
+    Override: private Collection getDados(Collection dados);
+

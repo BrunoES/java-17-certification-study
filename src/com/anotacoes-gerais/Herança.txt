@@ -1,0 +1,49 @@
+Métodos staticos não podem ser overridend por métodos não estáticos, ou vice-versa.
+Isso ocorre pois a referência de um método estático aponta para a Classe (Tipo), e não para o objeto.
+
+Não é possível acessar atributos de uma classe através do 'super', exemplo: 'super.name'
+
+--------------
+
+Caso uma classe herde um método que é sobrescrito na classe filha, este método será utilizado quando
+o tipo do objeto é do tipo da sub classe, e não do tipo da classe mãe, por exemplo:
+
+Foo foo = new Bar();
+foo.print(); -- Printa Foo
+
+Bar bar = new Bar();
+bar.print(); -- Printa Bar
+
+--------------
+
+Um método que faz override em um método de uma classe mãe, só pode fazer override, se seu tipo de retorno for o mesmo, ou um subtipo
+do tipo de retorno do método que está sendo sobrescrito.
+
+--------------
+
+Todo método abstrato definido em uma interface, ou classe abstrata, por padrão é público.
+E todo método definido numa classe filha, como implementação, que não tenha modificador de acesso, é default.
+
+Por tanto, se há um método abstrato definido sem modificador de acesso, seu método que o implementa, ou que o sobrescreve,
+não pode reduzir este escopo de acesso, ou seja, não pode ser default, tem que ser public também (neste exemplo).
+
+--------------
+
+Uma classe filha não pode ser declarada no mesmo arquivo (.java) da sua classe mãe.
+
+--------------
+
+Isso compila, e funciona:
+
+String x = "hello";
+try {
+    throw new IOException(x = "good bye");
+} catch (Exception e) {
+    System.out.println(x);
+}
+
+'x' assume o valor "good bye", antes de cair no catch.
+
+--------------
+
+

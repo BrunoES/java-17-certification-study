@@ -1,0 +1,3 @@
+jdeps --list-deps:
+Lista dependência de módules requeridos por um módulo alvo.
+

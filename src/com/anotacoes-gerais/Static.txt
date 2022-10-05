@@ -1,0 +1,6 @@
+Se tenho um atributo static em uma classe, e tenho duas instâncias desta classe,
+o valor deste atributo, será o útimo valor setado pela última instância.
+Static = Atributo de classe, não de objeto.
+
+--------------
+

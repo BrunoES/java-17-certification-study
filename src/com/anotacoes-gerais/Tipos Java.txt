@@ -1,0 +1,26 @@
+O java entende Integer como int, porém a preferência é sempre pelo tipo Integer
+e vice-versa.
+
+--------------
+
+Caso exista uma sobrecarga de método, com operadores float e Integer, o método seja chamado com um valor int, o método considerado será o float.
+
+void aMethod(float argument) {
+    System.out.println("Method B"); // Valor chega aqui como, 1.0
+}
+
+void aMethod(Integer argument) {
+    System.out.println("Method C");
+}
+
+aMethod(1)
+
+--------------
+
+Caso um método int, seja inicializado com um caracter, o seu valor, será a representação numérica, se sua posição na tabela ASCII, por exemplo:
+
+int number = 'A'; // number = 65
+int number = 'a'; // number = 97
+
+--------------
+

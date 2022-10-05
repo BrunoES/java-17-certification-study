@@ -1,0 +1,8 @@
+Se um método / atributo é privado, qualquer OBJETO que não seja o próprio objeto, não conseguirá acessá-lo.
+Mesmo que seja uma instância do mesmo Tipo.
+
+--------------
+
+static pode estar antes ou depois do modificador de acesso.
+
+--------------

@@ -1,0 +1,78 @@
+string1.intern():
+Caso já exista uma string com aquele mesmo conteúdo (ou que satisfaça o método equals()),
+o valor retornado será o objeto correspondente já existente.
+(considera apenas valores atribuidos diretamente, sem concatenação), exemplo:
+    String string1 = new String("Java11");
+    String string2 = "Java11";
+    String string3 = string1.intern();
+--------------
+
+String.compareTo():
+Compara lexograficamente se uma String é maior que a outra, exemplo:
+abcd > abc
+abc = abc
+hello > Hello (porque minúsculas vem depois de maiúsculas na tabela ASCII)
+
+--------------
+
+StringBuilder.reverse():
+Inverte String
+
+--------------
+String.setCharAt(0, 'a'):
+Atribui o char à posição especificada.
+
+--------------
+
+String.format:
+- Exemplos:
+%s = Substitui string passada por parâmetro após String.
+%d  = Substitui número passado por parâmetro após String.
+%2$s %1$s = Substitui conteúdo passado, respeitando o index 2 e 1 neste caso, exemplo:
+String string = String.format("Welcome to %2$s%1$s century", "st", 21);
+Saída: Welcome to 21st century
+
+Obs: Não necessariamente o tipo %s ou %d precisa ser do tipo passado, se o parametro for
+um inteiro por exemplo, e a string conter apenas um %s, ele será exibido como String.
+
+--------------
+
+Diferença, substring x subSequence:
+String.substring(begin, numberOfChars)
+String.subSequence(begin, end);
+
+--------------
+
+Ao concatenar uma string numa com um valor string qualquer, o resultado será null+novoValor, exemplo:
+String string1 = null;
+string1 += teste;
+resultado: nullteste;
+
+--------------
+
+isEmpty : Se de fato a string está vazia ""
+isBlank : Se o texto é vazio, mesmo que tenha outros caracteres, por exemplo: \t \n
+
+--------------
+
+Caso já exista uma string, com valor definido previamente, inicializada antes, e uma outra String é criada com  o mesmo valor,
+então é reaproveitada a referência deste valor em memória, e ambos os objetos passam a ter a mesma referência, exemplo:
+
+String string1 = new String("ja") + new String("va");
+String string2 = "ja" + "va";
+String string3 = "java";
+String string4 = new String("java");
+String string5 = "java";
+
+string2 e string3 apontam para a mesma referência
+string1 e string2 não, apontam para a mesma referência, pois o new String no Ja, e no Va, criaram duas instâncias, para depois concatenar.
+string4 também não aponta para nenhuma outra referência igual;
+string3 e string5 apontam para a mesma referência;
+
+String string1 = "ja" + "va";
+String string2 = "ja" + "va";
+String string3 = "java";
+
+Desta forma, todos seriam iguais entre sí, ou seja, apontariam para a mesma referência.
+
+--------------

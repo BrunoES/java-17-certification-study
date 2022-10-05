@@ -1,0 +1,52 @@
+List.of():
+Sem parâmetros, retorna uma nova lista vazia.
+
+--------------
+
+O construtor new ArrayList<>(int) do ArrayList recebe a initialCapacity da lista, não sendo um elemento
+sendo adicionado.
+
+List<Integer> list = new ArrayList<>(1);
+list.add(2);
+list.add(3);
+System.out.println(list);
+[2, 3]
+
+--------------
+
+O new ArrayList<>() retorna uma nova arrayList de object, portanto isso compila:
+var list = new ArrayList<>(); // Line 1
+
+--------------
+
+List.add(index, element):
+'Encaixa' o elemento naquela posição, sem substituir o valor anterior. Joga o valor anterior para o próximo índice, e adiciona.
+
+diferentemente do set(index, element), que simplesmente substitui.
+
+--------------
+
+* Importante *
+Quando uma lista é criada a partir de Arrays.asList(array), exemplo:
+Integer[] array = {1, 2};
+List<Integer> list = Arrays.asList(array);
+
+O array é passado por referência, e toda alteração feita na lista, reflete no array.
+ex: list.set(0, 2);
+
+Irá atribuir 2, na posição 0 do array
+
+--------------
+
+List.remove(0) -> Retorna elemento removido
+List.remove(Object =) -> Retorna true ou false se removeu
+
+--------------
+
+List.retainAll(list) -> Retêm na lista apenas os elementos em comum nas duas listas,
+e remove o restante.
+
+--------------
+
+List.of(A, B, C ..):
+Cria uma lista imutável.
