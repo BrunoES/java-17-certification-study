@@ -6,3 +6,5 @@ Mesmo que seja uma instância do mesmo Tipo.
 static pode estar antes ou depois do modificador de acesso.
 
 --------------
+
+default: Também conhecido como private-package, faz com que o elemento seja visível à outras classes do mesmo pacote apenas.
