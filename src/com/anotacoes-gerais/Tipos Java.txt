@@ -24,3 +24,13 @@ int number = 'a'; // number = 97
 
 --------------
 
+long e int são interpoláveis, de forma que um método que recebe long, pode também receber um parâmetro Int.
+
+--------------
+
+Caso exista uma sobrecarga de método que receba Long (tipo abstrato), e um outro que receba um tipo primitivo long, caso não seja passado
+explicitamente um argumento declarado Long, o valor método considerado será o método que recebe o parâmetro primitivo.
+O mesmo para: Float, Double, Integer...
+
+--------------
+

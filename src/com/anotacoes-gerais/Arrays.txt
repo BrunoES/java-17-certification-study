@@ -9,7 +9,18 @@ Errado: Do lado esquerdo declarar
 
 Retorna -1 Se não há incompatibilidade entre o conteúdo dos arrays, e se houver, retorna o índice da incompatibilidade.
 Arrays.mismatch(array1, array2);
-Arrays.mismatch(array1, begin, end, array2, begin, end);
+Arrays.mismatch(array1, indiceInicial, quantidadeDeElementos, array2, indiceInicial, quantidadeDeElementos);
+
+indiceInicial: Só serão analisados elementos daqui em diante
+quantidadeDeElementos: Quantidade de elementos do array que serão considerados (porém apenas a partir do indiceInicial);
+
+String[] array1 = {"a", "b", "c"};
+String[] array2 = {"c", "b", "c"};
+int result = Arrays.mismatch(array1, 1, 2, array2, 1, 2);
+System.out.println(result);
+
+Exemplo: Este método acima retornará -1, mesmo "a" e "c" na posição 0 sendo incompatíveis, pois a análise só começa no índice 1,
+o terceiro elemento também não foi considerado pois passamos apenas 2 na quantidadeDeElementos, e o primeiro não foi considerado.
 
 --------------
 

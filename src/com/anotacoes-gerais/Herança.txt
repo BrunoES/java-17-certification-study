@@ -46,4 +46,4 @@ try {
 
 --------------
 
-
+Um atributo static pode sem problemas ser "overrided" por um atributo não static de uma classe filha, e vice-versa.

@@ -10,7 +10,7 @@ List<Integer> list = new ArrayList<>(1);
 list.add(2);
 list.add(3);
 System.out.println(list);
-[2, 3]
+Saída: [2, 3]
 
 --------------
 

@@ -3,3 +3,8 @@ Válido:
     LocalDate.of(2019,1,1);
     LocalDate.ofYearDay(2019,1);
     LocalDate.parse("2019-01-01");
+
+Inválido:
+    LocalDate date = LocalDate.of(2019, "JANUARY", 1);
+    LocalDate date = new LocalDate(2019, 1, 1);
+    LocalDate date = LocalDate.parse("2019-1-1");
