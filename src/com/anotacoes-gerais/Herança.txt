@@ -5,6 +5,11 @@ Não é possível acessar atributos de uma classe através do 'super', exemplo: 
 
 --------------
 
+O super. funciona apenas para acessar métodos da classe mãe logo acima, não é possível acessar métodos
+de uma classe avó, por exemplo.
+
+--------------
+
 Caso uma classe herde um método que é sobrescrito na classe filha, este método será utilizado quando
 o tipo do objeto é do tipo da sub classe, e não do tipo da classe mãe, por exemplo:
 
@@ -47,3 +52,19 @@ try {
 --------------
 
 Um atributo static pode sem problemas ser "overrided" por um atributo não static de uma classe filha, e vice-versa.
+
+--------------
+
+A implementação de um método herdado de uma classe mãe, é aceita como implementação de um método especificado em uma interface implementada pela classe filha.
+
+Exemplo:
+public class FooBar extends Bar implements Foo {
+
+}
+
+Onde Bar possui a implementação do método X, definido na interface Y.
+
+--------------
+
+
+

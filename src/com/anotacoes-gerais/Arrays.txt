@@ -25,7 +25,8 @@ o terceiro elemento também não foi considerado pois passamos apenas 2 na quant
 --------------
 
 Arrays.copyOf(array1, 1);
-Copia o conteúdo de array1, limitado até a posição 1, ou seja, só copiará 1 elemento.
+Copia o conteúdo de array1, definindo o novo tamanho do array em 1.
+Caso 1 seja insuficiente, será lançada uma java.lang.ArrayIndexOutOfBoundsException
 
 --------------
 

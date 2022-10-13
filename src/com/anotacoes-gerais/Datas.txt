@@ -8,3 +8,24 @@ Inválido:
     LocalDate date = LocalDate.of(2019, "JANUARY", 1);
     LocalDate date = new LocalDate(2019, 1, 1);
     LocalDate date = LocalDate.parse("2019-1-1");
+
+-----------------
+
+LocalDate.with:
+localDate = localDate.with(DayOfWeek.TUESDAY);
+
+Neste caso, o método with irá "arredondar" a data para a terça-feira mais próxima da data atual.
+
+-----------------
+
+LocalDate.plus*
+
+Os métodos plus, sempre vão adicionar o valor correspondente, por exemplo:
+Considerando o valor de 12/05/2019, realizarndo plusMonths(1), o resultado seria 12/06/2019,
+não são adicionados 30 dias, mas sim o mês é incrementado.
+
+localDate = localDate.plusMonths(1);
+
+Isso se aplica para todos os métodos plus*
+-----------------
+

@@ -2,5 +2,8 @@ Se tenho um atributo static em uma classe, e tenho duas instâncias desta classe
 o valor deste atributo, será o útimo valor setado pela última instância.
 Static = Atributo de classe, não de objeto.
 
+https://stackoverflow.com/questions/4934913/are-static-variables-shared-between-threads#:~:text=Static%20variables%20are%20indeed%20shared,two%20copies%20of%20the%20variable.
+
+É como se o valor fosse shared entre as classes filhas.
 --------------
 

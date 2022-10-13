@@ -14,6 +14,15 @@ Saída: [2, 3]
 
 --------------
 
+o construtor new ArrayList<>(List.of("A", "B")) aceita uma lista como parâmetro.
+		List<String> list = new ArrayList<>(List.of("A", "B"));
+
+--------------
+
+O método list.removeAll(List.of("B", "C")) aceita uma lista como parâmetro.
+
+--------------
+
 O new ArrayList<>() retorna uma nova arrayList de object, portanto isso compila:
 var list = new ArrayList<>(); // Line 1
 
@@ -50,3 +59,14 @@ e remove o restante.
 
 List.of(A, B, C ..):
 Cria uma lista imutável.
+
+--------------
+
+Uma lista aceita elementos repetidos;
+
+--------------
+
+Caso um remove seja feito em um elemento de referência X, e este elemente existe de forma repetida dentro da lista, apenas uma posição dele será apagada, e não as duas
+embora seja o mesmo elemento 2 vezes na lista.
+
+--------------
