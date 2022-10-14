@@ -1,9 +1,21 @@
+--------------
+
 Declações válidas de matriz:
 int[][] matrix2 = new int[2][];
 int[][] matrix2 = new int[2][1];
 Errado: Do lado esquerdo declarar
         Declarar quantidade de coluna sem declarar quantidade de linhas
         Não declarar nada
+
+--------------
+
+Declaração incorreta de arrys (array3):
+
+Object[] array1 = new Object[]{"John", 30}; // Line 1
+Object[] array2 = new Object[]{new int[][]{}}; // Line 2
+Object[] array3 = new Object[1]{new Object()} ; // Line 3 Incorreto, pois não se pode fornecer um tamanho fixo para o array, quando inicializado.
+Object[] array4 = new String[0]; // Line 4
+Object[][] array5 = new Integer[][]{{}}; // Line 5
 
 --------------
 

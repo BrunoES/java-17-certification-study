@@ -1,0 +1,8 @@
+------------------
+
+O construtor default da super classe é sempre invocado, quando o construtor default da classe filha é invocado;
+caso não queria invocar o construtor default da classe mãe, pode-se invocar desta forma: super(x, y, z);
+
+Para chamar um construtor na própria classe, pode-se utilizar this(x, y, z);
+
+------------------

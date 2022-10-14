@@ -1,0 +1,47 @@
+---------------
+
+Nestes exemplos abaixo, apenas os métodos loop1 e loop2 apresentam Unrecheable Code:
+
+void loop1() {
+    while (0 != 0) {
+        System.out.println("inside");
+    }
+    System.out.println("outside");
+}
+
+void loop2() {
+    while (0 == 0) {
+        System.out.println("inside");
+    }
+    System.out.println("outside");
+}
+
+void loop3() {
+    int i = 0;
+    while (i != 0) {
+        System.out.println("inside");
+    }
+    System.out.println("outside");
+}
+
+void loop4() {
+    int i = 0;
+    while (i == 0) {
+        System.out.println("inside");
+    }
+    System.out.println("outside");
+}
+
+---------------
+
+// Incrementa valor antes de retornar:
+int increase(int number) {
+    return ++number;
+}
+
+// Retorna valor original antes de incrementar:
+int increase(int number) {
+    return number++;
+}
+
+---------------

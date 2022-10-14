@@ -29,3 +29,10 @@ do while, e while do, só podem utilizar variáveis definidas fora deles.
 
 --------------
 
+Ao se declarar uma variável dentro de um for, por exemplo:
+for (int i = 0 ; ....)
+Não pode ter outra variábel i, dentro do método, ou seja, dentro do escopo local.
+Porém pode ter outra variável i no escopo da classe.
+
+--------------
+

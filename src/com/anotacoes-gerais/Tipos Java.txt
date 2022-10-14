@@ -34,3 +34,13 @@ O mesmo para: Float, Double, Integer...
 
 --------------
 
+byte b = 100; // Line 1
+char c = b; // Line 2
+short s = c; // Line 3
+float f = s; // Line 4
+long l = f; // Line 5
+double d = l; // Line 6
+
+Linhas 2, 3, e 5 erradas.
+
+--------------
