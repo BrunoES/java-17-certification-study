@@ -19,6 +19,11 @@ StringBuilder.reverse():
 Inverte String
 
 --------------
+
+new StringBuilder(1)
+Parametro indica capacity do StringBuilder;
+
+--------------
 String.setCharAt(0, 'a'):
 Atribui o char à posição especificada.
 
@@ -76,3 +81,16 @@ String string3 = "java";
 Desta forma, todos seriam iguais entre sí, ou seja, apontariam para a mesma referência.
 
 --------------
+Novos métodos de manipulação de String Builder:
+
+StringBuilder builder = new StringBuilder("good bye");
+
+builder.delete(4, 5);
+builder.deleteCharAt(4);
+builder.replace(4, 5, "");
+
+System.out.println(builder);
+saída: goodbye
+
+--------------
+

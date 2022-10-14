@@ -44,3 +44,14 @@ double d = l; // Line 6
 Linhas 2, 3, e 5 erradas.
 
 --------------
+int com valores que começam com 0, são representados na forma octal, por exemplo:
+int i = 070;
+System.out.println(i);
+
+saída: 56
+--------------
+
+int: 0b 0x
+
+int i = 0b0011; // Representação binária de três;
+int i = 0x01515 // Representação hexadecimal;

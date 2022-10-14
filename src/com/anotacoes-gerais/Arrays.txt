@@ -17,6 +17,8 @@ Object[] array3 = new Object[1]{new Object()} ; // Line 3 Incorreto, pois não s
 Object[] array4 = new String[0]; // Line 4
 Object[][] array5 = new Integer[][]{{}}; // Line 5
 
+Obs, no caso de matríz, não há problema inserir apenas uma posição, em vez das duas, por exemplo:
+char[][] a = { { 'a' } };
 --------------
 
 Retorna -1 Se não há incompatibilidade entre o conteúdo dos arrays, e se houver, retorna o índice da incompatibilidade.
@@ -34,11 +36,17 @@ System.out.println(result);
 Exemplo: Este método acima retornará -1, mesmo "a" e "c" na posição 0 sendo incompatíveis, pois a análise só começa no índice 1,
 o terceiro elemento também não foi considerado pois passamos apenas 2 na quantidadeDeElementos, e o primeiro não foi considerado.
 
+Não aceita por exemplo: mismatch(array1, arra2), onde array é o long e array 2 é Long, ou char e Character.
 --------------
 
 Arrays.copyOf(array1, 1);
 Copia o conteúdo de array1, definindo o novo tamanho do array em 1.
 Caso 1 seja insuficiente, será lançada uma java.lang.ArrayIndexOutOfBoundsException
+
+--------------
+
+Arrays.fill(a2, 3):
+Preenche cada índice do array, com o valor 3;
 
 --------------
 

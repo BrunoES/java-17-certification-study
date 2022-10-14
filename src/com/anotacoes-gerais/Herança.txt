@@ -66,5 +66,14 @@ Onde Bar possui a implementação do método X, definido na interface Y.
 
 --------------
 
+Um trhows em um método overrider na classe filha, que lançe uma exeption de classe mais genérica do que o método pai que faz throws na classe mãe, não é um problema.
+Exemplo: métodoX na classe mãe faz throws Exception
+Exemplo: métodoX na classe fila faz throws SQLException
+ou vice-versa.
+
+--------------
+
+
+
 
 

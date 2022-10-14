@@ -2,6 +2,7 @@ List.of():
 Sem parâmetros, retorna uma nova lista vazia.
 
 --------------
+List.add:
 
 O construtor new ArrayList<>(int) do ArrayList recebe a initialCapacity da lista, não sendo um elemento
 sendo adicionado.
@@ -12,6 +13,18 @@ list.add(3);
 System.out.println(list);
 Saída: [2, 3]
 
+--------------
+
+List.add(index, element):
+'Encaixa' o elemento naquela posição, sem substituir o valor anterior. Joga o valor anterior para o próximo índice, e adiciona.
+
+diferentemente do set(index, element), que simplesmente substitui.
+
+--------------
+
+List.add(2, 1): Adiciona o elemento 1, no index 2.
+
+** Add retorna true / false;
 --------------
 
 o construtor new ArrayList<>(List.of("A", "B")) aceita uma lista como parâmetro.
@@ -28,13 +41,6 @@ var list = new ArrayList<>(); // Line 1
 
 --------------
 
-List.add(index, element):
-'Encaixa' o elemento naquela posição, sem substituir o valor anterior. Joga o valor anterior para o próximo índice, e adiciona.
-
-diferentemente do set(index, element), que simplesmente substitui.
-
---------------
-
 * Importante *
 Quando uma lista é criada a partir de Arrays.asList(array), exemplo:
 Integer[] array = {1, 2};
@@ -46,9 +52,21 @@ ex: list.set(0, 2);
 Irá atribuir 2, na posição 0 do array
 
 --------------
+List.remove
 
 List.remove(0) -> Retorna elemento removido
 List.remove(Object =) -> Retorna true ou false se removeu
+
+--------------
+List.remove
+
+// Remove elemento Integer que tenha valor 1:
+
+Integer num = 1;
+numbers.remove(num);
+
+// Remove elemento no índice 1:
+numbers.remove(1);
 
 --------------
 

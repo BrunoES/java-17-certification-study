@@ -45,3 +45,12 @@ int increase(int number) {
 }
 
 ---------------
+
+No Java, toda varíavel é passada por parâmetro na forma de pass-by-value, e não pass-by-reference.
+
+---------------
+
+Se um método é stático, e ele está sendo chamado de forma não estática, para o Java,
+é como se ele não existisse em termos de tomada de decisão para sobrecarga de métodos, ou vice versa.
+
+---------------
