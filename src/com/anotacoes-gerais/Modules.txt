@@ -73,7 +73,8 @@ open module a {
     // declarações
 }
 
-
+* Antes do Java 9 e o encapsulamento por módulos, basicamente qualquer classe poderia "aprender" sobre os atributos de outra,
+ferindo assim o encapsulamento.
 
 "... Por padrão, um módulo com acesso runtime reflexivo a um pacote pode ver os tipos public do pacote
 (e seus tipos public e protected aninhados). No entanto, o código em outros módulos pode acessar todos os tipos no
