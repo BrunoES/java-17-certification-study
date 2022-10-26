@@ -39,6 +39,7 @@ O método list.removeAll(List.of("B", "C")) aceita uma lista como parâmetro.
 O new ArrayList<>() retorna uma nova arrayList de object, portanto isso compila:
 var list = new ArrayList<>(); // Line 1
 
+var array = {1,2} não compila, declaração de array precisa de um tipo específico.
 --------------
 
 * Importante *

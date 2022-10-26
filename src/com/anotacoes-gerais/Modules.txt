@@ -1,3 +1,83 @@
 jdeps --list-deps:
 Lista dependência de módules requeridos por um módulo alvo.
 
+requires: Expecifica que um módulo precisa do outro para ser compilado, exemplo:
+
+module a {
+    requires b;
+}
+
+
+requires transitive: Siginifica que o módulo indicado com esta diretiva, possui uma dependência com um outro módulo, e o módulo que o lê, também precisará contê-la.
+Por exemplo: Caso o módulo A, dependa do módulo B (pois retorna um dado de um tipo X, contido no módulo B), então o módulo C, que utiliza o módulo A, também depende do módulo B.
+Ou seja: O Módulo C, lê implicitamente o módulo B.
+
+module a {
+    requires transitive b;
+}
+
+
+exports: Permite exportar um dos pacotes (com tipo publicos, e seus tipos protected aninhados).
+
+module a {
+    exports a.pkg;
+}
+
+
+exports to: Permite exportar um pacote para n módulos por ',' (exportação qualificada).
+
+module a {
+    exports a.pkg to b, c;
+}
+
+
+uses: Especifica que o módulo possui uma dependência, pois implementa uma funcionalidade (serviço) que é
+especificada por uma interface ou abstract class citada no cláusula uses.
+
+module a {
+    uses b.pkg.AbstractClasse0;
+    uses b.pkg.Interface0;
+}
+
+
+provides .. with: A diretiva provides especifica a classe abstrata ou interface que define um serviço que é
+implementado pelo uses, e o with, define a classe que implementa este serviço no módulo que tem o uses.
+
+module a {
+    uses b.pkg.AbstractClasse0;
+    uses b.pkg.Interface0;
+}
+
+module b {
+    provides b.pkg.AbstractClasse0 with a.pgk.Classe0;
+    provides b.pkg.Interface0 with a.pgk.Classe1;
+}
+
+
+opens: Habilita reflexão apenas para um pacote específico (de seus tipos públicos e protected aninhados):
+
+module a {
+    opens a.pkg;
+}
+
+opens .. to : Habilita reflexão apenas para um pacote específico (de seus tipos públicos e protected aninhados)
+para n módulos separados por ','.:
+
+module a {
+    opens a.pkg to b, c, d;
+}
+
+open: Aplicado na declaração do módulo, expõe para reflexão todos os tipos públicos de todo o módulo (e protected aninhados).
+
+open module a {
+    // declarações
+}
+
+
+
+"... Por padrão, um módulo com acesso runtime reflexivo a um pacote pode ver os tipos public do pacote
+(e seus tipos public e protected aninhados). No entanto, o código em outros módulos pode acessar todos os tipos no
+pacote exposto e todos os membros desses tipos, incluindo membros private via setAccessible, como nas versões anteriores do Java.
+..."
+Referência:
+https://www.oracle.com/br/corporate/features/understanding-java-9-modules.html
