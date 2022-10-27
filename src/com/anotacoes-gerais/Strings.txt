@@ -93,4 +93,11 @@ System.out.println(builder);
 saída: goodbye
 
 --------------
+String s1 = "java";
+String s2 = s1.replace('A', 'a');
+String s3 = s1.replace("A", "a");
+String s4 = s1.replaceAll("A", "a");
 
+Neste exemplo acima, todas as strings terão a mesma referência de s1.
+
+--------------

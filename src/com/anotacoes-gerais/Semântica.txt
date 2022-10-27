@@ -54,3 +54,12 @@ Se um método é stático, e ele está sendo chamado de forma não estática, pa
 é como se ele não existisse em termos de tomada de decisão para sobrecarga de métodos, ou vice versa.
 
 ---------------
+
+int num = array[index = 1]++;
+int num = ++array[index = 1];
+
+Em ambos os casos acima, o valor incrementado é o elemento do array, e não o 'num';
+---------------
+
+
+

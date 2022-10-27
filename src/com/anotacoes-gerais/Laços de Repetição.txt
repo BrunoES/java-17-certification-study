@@ -19,9 +19,10 @@ para sair deste bloco, basta dar um break myLabel;
 --------------
 
 for (int i = 0; false; i++) {
+    // Unrecheable code
 }
 
-Isso não compila
+Isso não compila, Unrecheable code.
 
 --------------
 
@@ -36,3 +37,8 @@ Porém pode ter outra variável i no escopo da classe.
 
 --------------
 
+for(element : lista) {
+    serve para Arrays também
+}
+
+--------------

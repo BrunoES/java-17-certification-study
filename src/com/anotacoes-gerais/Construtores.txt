@@ -6,3 +6,12 @@ caso não queria invocar o construtor default da classe mãe, pode-se invocar de
 Para chamar um construtor na própria classe, pode-se utilizar this(x, y, z);
 
 ------------------
+
+void Test(String input) { // Line 1
+    System.out.println(input);
+}
+
+Isso não caracteriza um construtor.
+
+------------------
+
