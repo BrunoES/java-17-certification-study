@@ -23,6 +23,13 @@ Inverte String
 new StringBuilder(1)
 Parametro indica capacity do StringBuilder;
 
+Valor default: 16
+Ao executar: new StringBuilder(1)
+a capacity será 16 + 1
+
+Ao executar: new StringBuilder("Oi")
+a capacity será 16 + 2
+
 --------------
 String.setCharAt(0, 'a'):
 Atribui o char à posição especificada.
@@ -99,5 +106,10 @@ String s3 = s1.replace("A", "a");
 String s4 = s1.replaceAll("A", "a");
 
 Neste exemplo acima, todas as strings terão a mesma referência de s1.
+
+--------------
+
+Procura pelo char, portanto, maíusculo e minúsculas faz diferença:
+string.indexOf('p');
 
 --------------

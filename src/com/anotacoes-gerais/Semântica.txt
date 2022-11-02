@@ -61,5 +61,28 @@ int num = ++array[index = 1];
 Em ambos os casos acima, o valor incrementado é o elemento do array, e não o 'num';
 ---------------
 
+O tipo de retorno de um método não faz parte da sua assinatura para considerar um método duplicado no processo de sobrecarga.
+    Exemplos:
 
+	int getNumber() {
+		return 0;
+	}
+	
+	float getNumber() {
+		return 1;
+	}
+	
+	long getNumber() {
+		return 1;
+	}
+	
+	String getA() {
+		return "";
+	}
+	
+	Exception getA() {
+		return "";
+	}
+
+----------------
 

@@ -1,0 +1,26 @@
+--------------
+    
+static int m() throws RuntimeException {
+    throw new ArithmeticException();
+}
+	
+Isso acima não gera erro por não ter retorno, a exception retornar antes de um possível retorno, anula.
+
+--------------
+
+Blocos anônimos apenas separam escopo:
+
+{
+    int i =0;
+}
+
+Neste caso, este bloco é stático, e executa uma vez, quando a classe for invada apenas na primeira vez.
+Literalmente apenas no primeiro new da classe, exemplo:
+new Test(); // Apenas aqui
+new Test();
+static {
+    System.out.print("bye ");
+}
+
+--------------
+

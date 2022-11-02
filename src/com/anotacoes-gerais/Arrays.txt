@@ -59,4 +59,32 @@ int element = array[index = 1]++;
 
 --------------
 
+Declarações incorretas de Array com var:
 
+var a1[] = new int[]{1, 2};
+var a2[] = {1, 2};
+var a3 = {1, 2};
+
+--------------
+
+Arrays de tipos primitivos não ficam nulos na inicialização, por exemplo:
+
+int[] array2 = new int[5];
+Aqui o array é: [0,0,0,0,0]
+
+--------------
+
+Porém aqui, a matriz na linha 1 será nula:
+
+int[][] matrix = new int[2][];
+matrix[0] = new int[]{1, 2};
+
+--------------
+
+Arrays.copyOfRange(array1, 1, 3);
+
+Vai copiar da posição 0 até a posição 2.
+início: inclusive
+final: exclusive
+
+--------------

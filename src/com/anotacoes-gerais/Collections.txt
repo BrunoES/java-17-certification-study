@@ -89,3 +89,9 @@ Caso um remove seja feito em um elemento de referência X, e este elemente exist
 embora seja o mesmo elemento 2 vezes na lista.
 
 --------------
+
+Neste exemplo, o addAll cria uma lista e só é possível add um próximo elemento no próximo índice,
+por: Neste caso, funcionaria apenas list.add(1, "B");
+
+list.addAll(List.of("A"));
+list.add(2, "B");

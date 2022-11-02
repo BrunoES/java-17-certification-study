@@ -55,3 +55,16 @@ int: 0b 0x
 
 int i = 0b0011; // Representação binária de três;
 int i = 0x01515 // Representação hexadecimal;
+
+---------------
+
+Isso é uma operação válida:
+
+byte b = (byte) 'b'; // 98
+b++; // 99
+short s = b; // 99
+System.out.println(s - 1); // 98
+
+---------------
+
+Valores float e double são printados com casa decimal

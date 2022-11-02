@@ -73,7 +73,11 @@ ou vice-versa.
 
 --------------
 
+Se uma classe abstrata implementa uma interface, caso ela não implemente o(s) métodos(s), uma de suas classes filhas terá de implementar, ex:
 
+public abstract class Test implements Testes {
+    // Pode ou não implementar o método da interface
+}
 
 
 

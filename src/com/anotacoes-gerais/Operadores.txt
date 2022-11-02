@@ -11,3 +11,15 @@ float f4 = 12.345_F; // Line 4
 float f5 = 12.345F_; // Line 5
 
 Obs: Ver o que siginifica o _ na declaração de float.
+
+--------------
+
+Mod:
+
+2 % 2 = 0
+2 % 1 = 0
+2 % 4 = 2
+-2 % 4 = -2
+-2 % -4 = -2
+
+--------------

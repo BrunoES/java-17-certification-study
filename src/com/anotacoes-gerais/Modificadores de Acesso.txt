@@ -14,3 +14,13 @@ default: Também conhecido como private-package, faz com que o elemento seja vis
 protected: Permite que o objeto seja visível para todas as classes do mesmo pacote e também subclasses.
 
 --------------
+
+Classes só podem ser: public, abstract e final.
+
+--------------
+
+Ao fazer atribuição à um array com list.toArray, se atentar ao cast, nesse caso precisa:
+String[] array = list.toArray();
+String[] array = (String[]) list.toArray();
+
+--------------

@@ -42,3 +42,14 @@ for(element : lista) {
 }
 
 --------------
+
+for (int element : array) {
+        if (element % 2 == 0)
+    continue;
+        else
+break;
+element *= 2;
+
+Este caso acima também caracteriza uma Unrecheable code em 'element *= 2';
+
+--------------    
