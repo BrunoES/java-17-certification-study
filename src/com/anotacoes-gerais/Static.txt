@@ -7,3 +7,10 @@ https://stackoverflow.com/questions/4934913/are-static-variables-shared-between-
 É como se o valor fosse shared entre as classes filhas.
 --------------
 
+Em contexto de método static, não pode usar o this:
+static void methodB() {
+    System.out.println(this.number); // Line 3
+    System.out.println(this.text); // Line 4
+}
+
+--------------

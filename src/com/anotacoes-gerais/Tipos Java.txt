@@ -68,3 +68,13 @@ System.out.println(s - 1); // 98
 ---------------
 
 Valores float e double são printados com casa decimal
+
+---------------
+
+Integer i2;
+i2++
+System.out.println(i2)
+
+Isso retorna: null, pois i2 ainda não foi inicializado.
+
+---------------

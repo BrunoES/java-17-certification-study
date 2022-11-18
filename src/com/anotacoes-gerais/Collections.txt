@@ -48,6 +48,7 @@ Integer[] array = {1, 2};
 List<Integer> list = Arrays.asList(array);
 
 O array é passado por referência, e toda alteração feita na lista, reflete no array.
+E toda alteração feita no array, reflete na lista.
 ex: list.set(0, 2);
 
 Irá atribuir 2, na posição 0 do array
@@ -77,6 +78,9 @@ e remove o restante.
 --------------
 
 List.of(A, B, C ..):
+Não cria uma lista imutável.
+
+copyOf.(list)
 Cria uma lista imutável.
 
 --------------

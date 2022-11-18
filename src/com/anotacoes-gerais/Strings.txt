@@ -113,3 +113,10 @@ Procura pelo char, portanto, maíusculo e minúsculas faz diferença:
 string.indexOf('p');
 
 --------------
+
+.append("Hello", 0, 5)
+
+O intervalo de 0 à 5 se refere ao intervalo da String "Hello" que será de fato adicionada, e não à posição da String
+original que receberá o novo conteúdo.
+
+--------------

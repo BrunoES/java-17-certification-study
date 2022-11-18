@@ -36,3 +36,10 @@ Um parâmetro de uma exception não pode ser atribuido, exemplo:
     e = new RuntimeException(e); // Line 2
 }
 -------------
+
+O Try requer sempre um finally, não necessariamente um catch
+try {
+    
+} finally {
+    
+}

@@ -86,3 +86,6 @@ O tipo de retorno de um método não faz parte da sua assinatura para considerar
 
 ----------------
 
+Um tipo boolean não pode estar em um switch case.
+
+----------------

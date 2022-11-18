@@ -29,3 +29,6 @@ localDate = localDate.plusMonths(1);
 Isso se aplica para todos os métodos plus*
 -----------------
 
+LocalDate.equals = Olha para o valor da data.
+
+-----------------

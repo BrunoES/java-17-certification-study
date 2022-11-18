@@ -15,3 +15,13 @@ Isso não caracteriza um construtor.
 
 ------------------
 
+A chamada de um construtor, sempre deve ser a primeira coisa a ser chamada em um construtor:
+
+public class Test {
+    Test(String arg1, String arg2) {
+    System.out.println("Two parameters");
+    this(arg1 + " " + arg2); //Erro
+}
+
+------------------
+

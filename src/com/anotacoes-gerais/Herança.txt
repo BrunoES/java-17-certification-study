@@ -1,6 +1,8 @@
 Métodos staticos não podem ser overridend por métodos não estáticos, ou vice-versa.
 Isso ocorre pois a referência de um método estático aponta para a Classe (Tipo), e não para o objeto.
 
+Já um atributo static pode sem problemas ser "overrided" por um atributo não static de uma classe filha, e vice-versa.
+
 Não é possível acessar atributos de uma classe através do 'super', exemplo: 'super.name'
 
 --------------
@@ -51,10 +53,6 @@ try {
 
 --------------
 
-Um atributo static pode sem problemas ser "overrided" por um atributo não static de uma classe filha, e vice-versa.
-
---------------
-
 A implementação de um método herdado de uma classe mãe, é aceita como implementação de um método especificado em uma interface implementada pela classe filha.
 
 Exemplo:
@@ -79,5 +77,22 @@ public abstract class Test implements Testes {
     // Pode ou não implementar o método da interface
 }
 
+--------------
 
+Operador 'super' não pode ser utilizado em contexto static.
 
+Ex:
+	static void printName() {
+		super.print(); // Line 2
+		}
+	}
+	
+--------------
+
+Classe abstrata exige que um método seja abstrato seja implementado, como uma interface.
+
+--------------
+
+Ordem correta: extends Bar implements Foo
+
+--------------

@@ -59,3 +59,9 @@ Portanto, não é obrigatório o throws por lado do implementador (não faz part
 
 Quando uma classe implementa mais de uma interface, se estas possuírem dois atributos idênticos, isto causa
 um erro de compilação, de campos ambíguos. Caso a classe também declare este atributo, não há problemas.
+
+--------------
+
+Se uma interface herda de uma interface, e existem métodos com a mesma assinatura, um método abstrato pode substiuir
+um método static implementado na interface mãe.
+Mas não pode haver a implementação de um método que foi definido na interface acima.

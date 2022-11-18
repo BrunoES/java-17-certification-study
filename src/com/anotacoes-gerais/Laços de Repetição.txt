@@ -53,3 +53,8 @@ element *= 2;
 Este caso acima também caracteriza uma Unrecheable code em 'element *= 2';
 
 --------------    
+
+// Isso funciona:
+for (int i = 0; i < 5; i++, System.out.print(i + " ")) {
+    i++;
+}
