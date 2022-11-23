@@ -96,3 +96,5 @@ Classe abstrata exige que um método seja abstrato seja implementado, como uma i
 Ordem correta: extends Bar implements Foo
 
 --------------
+
+um método abstract declarado na classe mãe ou interface, é por padrão public.

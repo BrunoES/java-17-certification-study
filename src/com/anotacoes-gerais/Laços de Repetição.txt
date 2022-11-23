@@ -58,3 +58,9 @@ Este caso acima também caracteriza uma Unrecheable code em 'element *= 2';
 for (int i = 0; i < 5; i++, System.out.print(i + " ")) {
     i++;
 }
+
+---------------
+
+for (int i = 0; false; i++) {
+    System.out.println("Inside"); // Isso não compilar pois aqui dá Unreachable code.
+}

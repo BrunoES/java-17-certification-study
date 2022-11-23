@@ -78,7 +78,7 @@ e remove o restante.
 --------------
 
 List.of(A, B, C ..):
-Não cria uma lista imutável.
+Cria uma lista imutável.
 
 copyOf.(list)
 Cria uma lista imutável.

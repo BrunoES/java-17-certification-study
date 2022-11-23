@@ -35,6 +35,7 @@ Um parâmetro de uma exception não pode ser atribuido, exemplo:
 } catch (RuntimeException | IOException e) { // Line 1
     e = new RuntimeException(e); // Line 2
 }
+
 -------------
 
 O Try requer sempre um finally, não necessariamente um catch
@@ -43,3 +44,22 @@ try {
 } finally {
     
 }
+
+-------------
+
+Ao dar print numa exception, o formto esperado é: classe + mensagem:
+
+com.java17.certification.overview.tests.MyException: A custom test
+
+considerando:
+
+package com.java17.certification.overview.tests;
+
+class MyException extends RuntimeException {
+	
+	MyException(String message) {
+		super(message);
+	}
+	
+}
+-------------

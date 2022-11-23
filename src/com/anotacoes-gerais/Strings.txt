@@ -120,3 +120,18 @@ O intervalo de 0 à 5 se refere ao intervalo da String "Hello" que será de fato
 original que receberá o novo conteúdo.
 
 --------------
+
+CharSequence:
+CharSequence is an interface that represents a sequence of characters. Mutability is not enforced by this interface.
+Therefore, both mutable and immutable classes implement this interface.
+
+String:
+String is a sequence of characters in Java. It is an immutable class and one of the most frequently used types in Java.
+This class implements the CharSequence, Serializable, and Comparable<String> interfaces.
+Let's compare the differences and commonalities of CharSequence and String. They both reside in the same package named java.lang.,
+but the former is an interface and latter is a concrete class. Moreover, the String class is immutable.
+In the following example, each sum operation creates another instance, increases the amount of data stored and returns the most recently created String:
+
+StringBuilder:
+On the other hand, StringBuilder updates the already created String to hold the new value:
+

@@ -11,6 +11,11 @@ default: Também conhecido como private-package, faz com que o elemento seja vis
 
 --------------
 
+Caso não tenha um modificador de acesso no método abastrato da interface, o mesmo é público, caso o método da class
+que o implementa não tenha este modificador de acesso, ele está como default, portanto, não compilará, pois está restringindo o acesso.
+
+--------------
+
 protected: Permite que o objeto seja visível para todas as classes do mesmo pacote e também subclasses.
 
 --------------

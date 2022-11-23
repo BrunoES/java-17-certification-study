@@ -89,3 +89,26 @@ O tipo de retorno de um método não faz parte da sua assinatura para considerar
 Um tipo boolean não pode estar em um switch case.
 
 ----------------
+
+Case: Caso não haja um break, todos os pontos serão aceitos:
+	static String select(int number) {
+		String output;
+		switch (number) {
+		case 0:
+		default:
+		case 1:
+		output = "positive1";
+		case 2:
+		output = "positive2";
+		case 3:
+		output = "positive3";
+		}
+		return output;
+	}
+
+Neste caso, todos os "positive" serão atribuidos, 1, 2 e 3;
+
+---------------
+Isso funciona:
+
+import foo.bar.Bar.* 
