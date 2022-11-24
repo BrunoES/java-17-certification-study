@@ -36,7 +36,7 @@ não pode reduzir este escopo de acesso, ou seja, não pode ser default, tem que
 
 --------------
 
-Uma classe filha pode ser declarada no mesmo arquivo (.java) da sua classe mãe.
+Uma classe filha pode ser declarada no mesmo arquivo (.java) da sua classe mãe, desde que esta classe filha não seja públic.
 
 --------------
 

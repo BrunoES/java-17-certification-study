@@ -64,3 +64,13 @@ for (int i = 0; i < 5; i++, System.out.print(i + " ")) {
 for (int i = 0; false; i++) {
     System.out.println("Inside"); // Isso não compilar pois aqui dá Unreachable code.
 }
+
+---------------
+
+	do {
+	int i = 0;
+	} while (i < 10);
+
+Neste exemplo acima, a linha do while falha, pois o 'i', só existe dentro do bloco do;
+
+---------------

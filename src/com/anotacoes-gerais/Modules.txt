@@ -82,3 +82,13 @@ pacote exposto e todos os membros desses tipos, incluindo membros private via se
 ..."
 Referência:
 https://www.oracle.com/br/corporate/features/understanding-java-9-modules.html
+
+---------------
+
+Compilação de módulos:
+
+javac -d mods --module-source-path src/ -m certification
+
+ou
+
+javac -d mods --module-source-path src/ --module certification

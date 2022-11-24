@@ -106,7 +106,7 @@ String s3 = s1.replace("A", "a");
 String s4 = s1.replaceAll("A", "a");
 
 Neste exemplo acima, todas as strings terão a mesma referência de s1.
-
+Caso não houve mudança na String, retorna a mesma referência, se não, é produzida uma nova String.
 --------------
 
 Procura pelo char, portanto, maíusculo e minúsculas faz diferença:

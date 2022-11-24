@@ -1,0 +1,7 @@
+-cp
+--classpath
+-classpath
+
+java -cp C:\Users\bruno\eclipse-workspace\Java-17-Certification\src\com\java09\certification ModulesExamples.java
+java --class-path C:\Users\bruno\eclipse-workspace\Java-17-Certification\src\com\java09\certification ModulesExamples.java
+java -classpath C:\Users\bruno\eclipse-workspace\Java-17-Certification\src\com\java09\certification ModulesExamples.java
