@@ -25,3 +25,11 @@ public class Test {
 
 ------------------
 
+Construtores como default em classes públicas, causará problemas de compilação nos construtores de possíveis classes filhas
+de outros pacotes que importem esta classe. Pois implicitamente o construtor super() será chamado, porém não será visível por
+ser protected package (ou default).
+public class Foo {
+	Foo() { }
+}
+
+------------------

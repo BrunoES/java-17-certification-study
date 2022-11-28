@@ -44,6 +44,7 @@ Foo foo = new Bar();
 Bar bar = new Bar();
 Sendo Foo a interface, e Bar a Classe que implementa.
 
+Caso a classe mãe, ou interface, possua apenas o abstract, será considerado o valor da classe filha. Bascicamente, o valor considerado do campo será sempre de onde o método está.
 --------------
 
 Quando uma classe abstrata "implements" uma interface, ela não precisa implementar os métodos definidos nela.

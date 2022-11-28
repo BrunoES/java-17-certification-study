@@ -53,6 +53,7 @@ ex: list.set(0, 2);
 
 Irá atribuir 2, na posição 0 do array
 
+set de fato substitui o valor;
 --------------
 List.remove
 
@@ -99,3 +100,17 @@ por: Neste caso, funcionaria apenas list.add(1, "B");
 
 list.addAll(List.of("A"));
 list.add(2, "B");
+
+--------------
+
+list.addAll(1, List.of("B"));
+
+Este comando acima irá inserir o conteúdo da nova lista na list começando no index 1.
+
+--------------
+
+No método listIterador, é retornado o Iterator da lista, começando no index passado por parâmetro:
+
+Iterator<String> iterator = strings.listIterator(1);
+
+--------------

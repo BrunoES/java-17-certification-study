@@ -43,6 +43,11 @@ Arrays.copyOf(array1, 1);
 Copia o conteúdo de array1, definindo o novo tamanho do array em 1.
 Caso 1 seja insuficiente, será lançada uma java.lang.ArrayIndexOutOfBoundsException
 
+
+Arrays.copyOf(array1, 1, 4);
+Neste caso, o 4 é exclusive, ou seja, não faz parte do range.
+Mesmo que não tenha 4 elementos, o retorno do copyOf será uma array preenchido com 0 onde não existe elemento,
+não sendo lançada nenhuma exceção.
 --------------
 
 Arrays.fill(a2, 3):

@@ -100,6 +100,11 @@ System.out.println(builder);
 saída: goodbye
 
 --------------
+
+StringBuilder.append, quando passado um objeto, ele considera o toString, exemplo:builder.append(foo); // Line 1
+builder.append(foo); // vai considerar aqui o toString() de Foo.
+
+--------------
 String s1 = "java";
 String s2 = s1.replace('A', 'a');
 String s3 = s1.replace("A", "a");
@@ -134,4 +139,24 @@ In the following example, each sum operation creates another instance, increases
 
 StringBuilder:
 On the other hand, StringBuilder updates the already created String to hold the new value:
+
+--------------
+
+StringBuilder.equals não é o mesmo que String.equals:
+
+String string = "Hey";
+StringBuilder builder = new StringBuilder(string);
+System.out.println(string.equals(builder)); // false
+System.out.println(string.contentEquals(builder)); true
+
+--------------
+
+String.join: Une os itens de uma coleção pelo char passado no primeiro parâmetro:
+obs: Não é aceito array no parâmetro.
+
+String string1  = String.join("-", "a", "b");
+String string2  = String.join("-", List.of("a", "b"));
+String string3  = String.join("-", new StringBuilder("a"), new StringBuilder("b"));
+
+--------------
 

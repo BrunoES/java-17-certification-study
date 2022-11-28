@@ -109,6 +109,25 @@ Case: Caso não haja um break, todos os pontos serão aceitos:
 Neste caso, todos os "positive" serão atribuidos, 1, 2 e 3;
 
 ---------------
+
+double não é permitido em switch cases, não irá compilar
+
+---------------
+
 Isso funciona:
 
 import foo.bar.Bar.* 
+
+---------------
+
+Override não pode mudar o tipo de retorno do método.
+
+---------------
+
+int a = 4, b = 2;
+System.out.println(a + b + "=a+b=" + a + b);
+
+O que está à direita da String "=a+b=" é interpretado como String, e não como int, portanto a saída será:
+6=a+b=42
+
+---------------

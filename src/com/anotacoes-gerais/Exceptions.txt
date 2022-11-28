@@ -48,6 +48,7 @@ try {
 -------------
 
 Ao dar print numa exception, o formto esperado é: classe + mensagem:
+System.out.println(e);
 
 com.java17.certification.overview.tests.MyException: A custom test
 

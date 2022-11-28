@@ -14,3 +14,26 @@ static void methodB() {
 }
 
 --------------
+
+Ordem de execução:
+
+1 - static
+2 - anonymous block
+3 - constructor
+
+public class Test {
+	static int number;
+	
+	public Test() {
+		number = 3;
+	}
+	
+	{
+		number = 2;
+	}
+	
+	static {
+		number = 1;
+	}
+
+}

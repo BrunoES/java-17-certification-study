@@ -1,0 +1,16 @@
+-------------------------
+
+java Test '1 2' 3
+Isso não executa, precisa ser:
+
+java Test.java '1 2' 3
+
+ou
+
+java -cp [classpath] Test '1 2' 3
+
+Saída: [1 2, 3]
+
+-------------------------
+
+

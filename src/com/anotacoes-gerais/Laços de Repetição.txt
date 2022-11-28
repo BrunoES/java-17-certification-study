@@ -74,3 +74,13 @@ for (int i = 0; false; i++) {
 Neste exemplo acima, a linha do while falha, pois o 'i', só existe dentro do bloco do;
 
 ---------------
+
+int i;
+int j;
+for (i = 1, j = 3; i <= j; i = i + 2, j++) {
+    i++;
+}
+
+Isso funciona perfeitamente, e o resultado é i = 7 e j = 5;
+
+---------------
