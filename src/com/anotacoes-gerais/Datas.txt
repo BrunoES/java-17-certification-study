@@ -32,3 +32,16 @@ Isso se aplica para todos os métodos plus*
 LocalDate.equals = Olha para o valor da data.
 
 -----------------
+
+O método ultil do LocalTime tem o end exlusive, o que significa que:
+Quando o valor é positivo, ele arredonda pra cima.
+Quando o valor é negativo, ele arredonda pra baixo.
+
+Ex: Considerando 08:10:00 e 12:10:00 para start e end:
+
+long timePassed = now.until(start, ChronoUnit.HOURS);
+long timeToGo = now.until(end, ChronoUnit.HOURS);
+
+A saída será, -2, 1, respectivamente.
+
+-----------------

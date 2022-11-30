@@ -78,3 +78,22 @@ System.out.println(i2)
 Isso retorna: null, pois i2 ainda não foi inicializado.
 
 ---------------
+
+long = 1;
+Long = 1L; // Precisa do L quando é Long
+
+long addend2 = (long) 1.8;
+Long addend2 = (long) 1.8;
+Long addend2 = (Long) 1.8;
+// Não precisa do L quando faz o cast, sej ao 
+
+// Errado:
+Long addend2 = (Long) 1.8;
+Long addend2 = (Long) 18;
+
+// Coreto:
+Long addend2 = (Long) 18L;
+Long addend2 = (long) 1.8;
+Long addend2 = (long) 18;
+
+---------------

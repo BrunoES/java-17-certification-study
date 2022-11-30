@@ -64,3 +64,12 @@ class MyException extends RuntimeException {
 	
 }
 -------------
+Isso abaixo não compila, pois IOException já está coberto por Exception, precisa ser duas
+Exceptions que não sejam pai-filho, que sejam independentes.
+
+try {
+    throw new FileNotFoundException();
+} catch (Exception | IOException e) {
+}
+
+-------------

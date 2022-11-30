@@ -85,6 +85,12 @@ copyOf.(list)
 Cria uma lista imutável.
 
 --------------
+copyOf.(list)
+
+Caso a lista possua um elemento nulo, será lançada um NullPointerException,
+pois o copyOf não aceita elementos nulos.
+
+--------------
 
 Uma lista aceita elementos repetidos;
 
@@ -112,5 +118,16 @@ Este comando acima irá inserir o conteúdo da nova lista na list começando no 
 No método listIterador, é retornado o Iterator da lista, começando no index passado por parâmetro:
 
 Iterator<String> iterator = strings.listIterator(1);
+
+--------------
+
+Neste caso abaixo o array1 receberá o valor de array de list caso o tamanho dele seja compatível com o
+tamanho da lista, caso contrário, será instanciado um novo array em memória.
+
+list.toArray(array1)
+
+--------------
+
+
 
 --------------

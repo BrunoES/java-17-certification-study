@@ -160,3 +160,7 @@ String string3  = String.join("-", new StringBuilder("a"), new StringBuilder("b"
 
 --------------
 
+lastIndexOf(str, indexStartFrom)
+indexStartFrom - inclusive
+
+--------------

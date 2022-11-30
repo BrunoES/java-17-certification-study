@@ -110,6 +110,10 @@ Neste caso, todos os "positive" serão atribuidos, 1, 2 e 3;
 
 ---------------
 
+Não é obrigatório default para switch case;
+
+---------------
+
 double não é permitido em switch cases, não irá compilar
 
 ---------------
@@ -131,3 +135,23 @@ O que está à direita da String "=a+b=" é interpretado como String, e não com
 6=a+b=42
 
 ---------------
+
+Boolean não precisa ser inicializado, mesmo que static.
+
+---------------
+
+Exemplo:
+
+int x = 1, y = 2, z = 3;
+x += y *= z -= x;
+System.out.println(x + " " + y + " " + z);
+
+Em uma expressão dessa, o valor é resolvido da direita para a esquerda, e tudo é somado em tempo real mesmo,
+não apenas na próxima linha.
+
+---------------
+
+String convert(char character) {
+	String text;
+	return text; // Erro, text precisa ser inicializado;
+}
