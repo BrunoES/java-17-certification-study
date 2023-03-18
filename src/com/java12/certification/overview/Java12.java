@@ -21,12 +21,15 @@ public class Java12 {
 				   */
 		
 		// Switch case:
-		String day = "MONDAY";
-		switch (day) {
-			case "MONDAY", "FRIDAY", "SUNDAY" -> System.out.println(1);
-			case "TUESDAY" -> System.out.println(2);
-			case "WEDNESDAY" -> System.out.println(3);
-		}
+		String day = "MON";
+		int dayNumber = switch (day) {
+			case "MON"-> 1;
+			case "TUE" -> 2;
+			case "WED" -> 3;
+			default -> 0;
+		};
+		
+		
 		
 		// Switch case com return de valor
 		int i =  switch (day) {

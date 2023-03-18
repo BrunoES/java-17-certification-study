@@ -5,7 +5,6 @@ HttpClient httpClient = HttpCliente.newBuilder().build();
 
 Novo método toArray, exemplo:
 Integer[] array = lista.toArray(Integer[]::new)
-toArray: Cria um novo array com o conteúdo da lista, nos moldes do array passado por parâmetro, inclusive tamanho.
 
 Novos métodos String:
 isBlank() - Se contêm apenas espaços (caracteres vazios)

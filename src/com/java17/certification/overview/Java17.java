@@ -17,13 +17,13 @@ public class Java17 {
 	     System.out.println(switch (day) {
 	         case SUNDAY, SATURDAY -> "Weekend";
 	         case FRIDAY, THURSDAY, WEDNESDAY, TUESDAY, MONDAY -> {
-	        	 // faz uma aï¿½ï¿½o no bloco / processamento, e yield retorna o valor
+	        	 // faz uma ação no bloco / processamento, e yield retorna o valor
 	        	 yield "Weekday";
 	         }
 	     });
 	     
-	     // Um benefï¿½cio das Selead classes, ï¿½ que ï¿½ possï¿½vel que o compilador saberï¿½ se todos os casos
-	     // possï¿½veis, de uma validaï¿½ï¿½o de tipo de classe foi cumprida ou nï¿½o, obrigando ou nï¿½o a implementaï¿½ï¿½o
+	     // Um benefício das Selead classes, é que é possível que o compilador saberá se todos os casos
+	     // possíveis, de uma validação de tipo de classe foi cumprida ou não, obrigando ou não a implementação
 	     // de um default;
 	     /*
 	      public String test(Object obj) {
@@ -37,15 +37,18 @@ public class Java17 {
 		}
 	      */
 	     
-	     test("a");
+	    // test("a");
 	}
+	
+	/*
 	 public static String test(Object obj) {
-		return switch(obj) {
-			case Integer i -> "It is an integer";
-			case String s -> "It is a string";
-			case House s -> "It is a house";
-			default -> "It is none of the known data types";
-		};
-			
-	}
+		    return switch(obj) {
+			    case Integer i -> "It is an integer";
+			    case String s -> "It is a string";
+			    case House s -> "It is a house";
+			    default -> "It is none of the known data types";
+		    };
+		     
+		}
+	*/
 }
