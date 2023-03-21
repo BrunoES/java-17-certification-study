@@ -1,4 +1,4 @@
-package com.topics.wrapperclasses;
+package com.topics.topic1.wrapperclasses;
 
 public class WrapperClasses {
 

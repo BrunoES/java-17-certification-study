@@ -1,4 +1,4 @@
-package com.topics.castingtoevaluatearithimetic;
+package com.topics.topic1.castingtoevaluatearithimetic;
 
 public class EvaluateArithimetic {
 

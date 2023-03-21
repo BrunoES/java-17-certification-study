@@ -1,4 +1,4 @@
-package com.topics.typepromotion;
+package com.topics.topic1.typepromotion;
 
 public class TypePromotionExamples {
     // A method that accept integer as parameter

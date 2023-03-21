@@ -1,4 +1,4 @@
-package com.topics.parentheses;
+package com.topics.topic1.parentheses;
 
 // 
 public class BalancedParentheses {

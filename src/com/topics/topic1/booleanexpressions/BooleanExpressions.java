@@ -1,4 +1,4 @@
-package com.topics.booleanexpressions;
+package com.topics.topic1.booleanexpressions;
 
 public class BooleanExpressions {
 	

@@ -1,13 +1,20 @@
-package com.topics.mathapi;
+package com.topics.topic1.mathapi;
 
 public class MathApi {
 	/*
 	 * https://www.tutorialspoint.com/java/lang/java_lang_math.htm
 	 */
 	public static void main(String[] args) {
+		
+		// raíz quadrada (square root)
+		double sqrt = Math.sqrt(4.0);
+		System.out.println(sqrt);
+		
+		// valor absoluto
 		double absDouble = Math.abs(2.7555);
 		System.out.println(absDouble);
 
+		// valor absoluto
 		long absLong = Math.abs(2L);
 		System.out.println(absLong);
 		

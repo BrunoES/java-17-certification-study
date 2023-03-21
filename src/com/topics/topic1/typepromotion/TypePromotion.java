@@ -1,4 +1,4 @@
-package com.topics.typepromotion;
+package com.topics.topic1.typepromotion;
 
 // 
 // https://www.geeksforgeeks.org/automatic-type-promotion-in-overloading-in-java/
