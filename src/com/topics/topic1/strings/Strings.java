@@ -3,6 +3,9 @@ package com.topics.topic1.strings;
 import java.util.List;
 import java.util.stream.IntStream;
 
+// https://javaconceptoftheday.com/java-new-string-methods-with-examples/
+// https://www.edureka.co/blog/java-string/
+// https://www.javatpoint.com/java-string
 public class Strings {
 
 	public static void main(String[] args) {
