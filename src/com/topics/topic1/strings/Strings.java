@@ -1,11 +1,14 @@
 package com.topics.topic1.strings;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Strings {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		chars();
+		codePoints();
 		intern();
 		compareTo();
 		format();
@@ -13,7 +16,41 @@ public class Strings {
 		indexOf();
 		join();
 		charSequence();
+		lines();
+		repeat();
+		strip();
+		translateEscapes();
 		curiosidades();
+	}
+	
+	/*
+	 * chars: Retorna um IntStream com os codePoints (código ASCII) dos chars.
+	 */
+	public static void chars() {
+		System.out.println("\nchars:");
+		
+        String s1 = "hello-stream";
+
+        // use the chars method to get a stream of char values
+        IntStream codePointStream = s1.chars();
+
+        // convert the code points back to characters and print the output
+        codePointStream.mapToObj(Character::toChars).forEach(System.out::println);
+        // Obs: Character.toChars converte um int num char.
+	}
+	
+	/*
+	 * codePoints: Retorna um IntStream com os codePoints (Suporta Unicode) dos chars.
+	 */
+	public static void codePoints() {
+		System.out.println("\ncodePoints:");
+		
+		String s1 = "teste";
+		
+		IntStream codePointStream = s1.codePoints();
+
+        // convert the code points back to characters and print the output
+        codePointStream.mapToObj(Character::toChars).forEach(System.out::println);
 	}
 	
 	/*
@@ -138,6 +175,71 @@ public class Strings {
 		// Both instantiations create Strings with the same content. However, they are not equal to each other:
 		System.out.println(s1.equals(s2)); // false
 		System.out.println(s1.equals(s2.toString())); // true
+	}
+	
+	/*
+	 * lines: Retorna um stream com as linhas da String
+	 */
+	public static void lines() {
+		System.out.println("\nlines:");
+		
+		String s1 = "Teste \n Teste";
+		
+		// Número de linhas:
+		System.out.println(s1.lines().count());
+		
+		// Printando linhas:
+		s1.lines().forEach(x -> System.out.println(x));
+	}
+	
+	/*
+	 * repeat: Retorna um stream com as linhas da String
+	 */
+	public static void repeat() {
+		System.out.println("\nrepeat:");
+		
+		String s1 = "Teste";
+		
+		System.out.println(s1.repeat(5));
+		
+		System.out.println(s1); // Não muda o valor da String
+	}
+	
+	/*
+	 * strip: trim melhorado com novos caracteres unicode que representam espaço em branco
+	 * stripLeading: Remove espaços em branco apenas da frente
+	 * stripTrailing: Remove espaços em branco apenas do fim
+	 */
+	public static void strip() {
+		System.out.println("\nstrip:");
+		
+		// You can use this method to remove all leading and trailing white spaces of the given string:
+        System.out.println("   1   ".strip());
+        System.out.println("\t A \t".strip());
+        System.out.println("\n A1 \n".strip());
+        System.out.println("1   A".strip());
+        System.out.println("-------");
+        System.out.println("a   ".stripTrailing());
+        System.out.println("   a".stripLeading());
+        System.out.println("-------");
+      
+        String s1 = "	String teste = \"teste\";";
+        // Remove a identação dos blocos
+        // Não muda valor da String, precisa atribuir
+        System.out.println(s1.stripIndent());
+	}
+	
+	/*
+	 * translateEscapes: Aplica os caracteres escapados, como \\n, \\t, etc.
+	 * Obs: Apenas escapados. 
+	 */
+	public static void translateEscapes() {
+		System.out.println("\ntranslateEscapes:");
+		
+		String s1 = "Hey, \\n This is not normally a line break.";
+		
+		System.out.println(s1);
+		System.out.println(s1.translateEscapes());
 	}
 	
 	public static void curiosidades() {
