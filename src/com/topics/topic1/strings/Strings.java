@@ -1,5 +1,6 @@
 package com.topics.topic1.strings;
 
+import java.lang.invoke.MethodHandles;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -10,20 +11,28 @@ public class Strings {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		chars();
-		codePoints();
+		chars(); // JDK9
+		codePoints(); // JDK9
 		intern();
 		compareTo();
 		format();
 		subStringXSubSequence();
 		indexOf();
-		join();
+		join(); // JDK8
 		charSequence();
-		lines();
-		repeat();
-		strip();
-		translateEscapes();
+		lines(); // JDK11
+		repeat(); // JDK11
+		strip(); // JDK11 (stripIndent() // JDK15)
+		indent(); // JDK12
+		translateEscapes(); // JDK15
+		transform(); // JDK12
+		describeConstable(); // JDK12
+		resolveConstantDesc(); // JDK12
+		formatted(); // JDK15
 		curiosidades();
+		
+		// Outros:
+		// endsWith(), getBytes().
 	}
 	
 	/*
@@ -245,6 +254,74 @@ public class Strings {
 		System.out.println(s1.translateEscapes());
 	}
 	
+	/*
+	 * ident: Identa uma String mediante um número de espaços
+	 */
+	public static void indent() {
+		System.out.println("\nindent:");
+		
+		String s1 = "123\nabc\nABC";
+		
+		System.out.println(s1.indent(1)); // identa com 1 espaço
+		System.out.println(s1.indent(4)); // identa com 4 espaços
+	}
+	
+	/*
+	 * transform: Aplica uma função à String.
+	 */
+	public static void transform() {
+		System.out.println("\ntransform:");
+		
+		String s1 = "teste";
+		
+		System.out.println(s1.transform(x -> x.toUpperCase()));
+		System.out.println(s1.transform(String::toUpperCase));
+	}
+
+	/*
+	 * describeConstable: retorna um Optional<String>
+	 * From Java 12, String class implements two more interfaces – Constable and ConstantDesc.
+	 * From these two interfaces, String class inherits two more methods – describeConstable()
+	 * from Constable and resolveConstantDesc() from ConstantDesc.
+	 */
+	public static void describeConstable() {
+		System.out.println("\ndescribeConstable:");
+		
+		String s1 = "teste";
+		
+		System.out.println(s1.describeConstable().get());
+	}
+	
+	/*
+	 * resolveConstantDesc: Permite aplicar MehodHandles à uma String à partir do resolveConstantDesc 
+	 * From Java 12, String class implements two more interfaces – Constable and ConstantDesc.
+	 * From these two interfaces, String class inherits two more methods – describeConstable()
+	 * from Constable and resolveConstantDesc() from ConstantDesc.
+	 */
+	public static void resolveConstantDesc() {
+		System.out.println("\nresolveConstantDesc:");
+		
+		String s1 = "teste";
+		
+		System.out.println(s1.resolveConstantDesc(MethodHandles.lookup()));
+	}
+	
+	/*
+	 * formatted: versão 'não estática' do método já conhecido, String.format().
+	 */
+	public static void formatted() {
+		System.out.println("\nformatted:");
+		
+		// formatted:
+		String s1 = "1) %s 2) %s 3) %s".formatted("Java", "Python", "JavaScript");
+		
+		// format:
+		String s2 = String.format("1) %s 2) %s 3) %s", "Java", "Python", "JavaScript");
+		
+		System.out.println(s1);
+		System.out.println(s2);
+	}
+	
 	public static void curiosidades() {
 		System.out.println("\ncuriosidades:");
 		
@@ -264,15 +341,19 @@ public class Strings {
 		String string2 = "";
 		String string3 = "\n";
 		
-		System.out.println(string2.isBlank());
+		System.out.println(string2.isBlank()); // JDK11
 		System.out.println(string2.isEmpty());
 		
-		System.out.println(string3.isBlank());
+		System.out.println(string3.isBlank()); // JDK11
 		System.out.println(string3.isEmpty());
 		
 		/*
 		 * Caso já exista uma string, com valor definido previamente, inicializada antes, e uma outra String é criada com  o mesmo valor,
 		 * então é reaproveitada a referência deste valor em memória, e ambos os objetos passam a ter a mesma referência, exemplo:
+		 * Java String Pool: Java String pool refers to collection of Strings which are stored in heap memory. In this,
+		 * whenever a new object is created, String pool first checks whether the object is already present in the pool or not.
+		 * If it is present, then same reference is returned to the variable else new object will be created in the String pool
+		 * and the respective reference will be returned
 		 */
 		
 		String s1 = new String("ja") + new String("va");

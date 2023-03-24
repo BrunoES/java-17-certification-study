@@ -7,6 +7,9 @@ public class StringBuilders {
 		reverse();
 		stringBuilderCapacity();
 		setCharAt();
+		trimToSize();
+		insert();
+		ensureCapacity();
 		delete();
 		deleteCharAt();
 		replace();
@@ -55,6 +58,62 @@ public class StringBuilders {
 	}
 	
 	/*
+	 * trimToSize(): Readequa a capacity de um StringBuilder de acordo com usa necessidade
+	 * de utilização.
+	 */
+	public static void trimToSize() {
+		System.out.println("\ntrimToSize:");
+
+		StringBuilder sb = new StringBuilder("Teste");
+		
+		System.out.println("Capacity antes de trimToSize(): " + sb.capacity());
+		
+		sb.trimToSize();
+		
+		System.out.println("Capacity depois de trimToSize(): " + sb.capacity());
+		
+		System.out.println(sb);
+	}
+	
+	/*
+	 * insert: Insere a String numa posição
+	 */
+	public static void insert() {
+		System.out.println("\ninsert:");
+		
+		StringBuilder sb = new StringBuilder("Teste");
+		sb.insert(0, "Ah ");
+		System.out.println(sb);
+		
+		sb.insert(1, " Ah ");
+		System.out.println(sb);
+	}
+	
+	/*
+	 * ensureCapacity: Incrementa o capacity de um Strinbuilder, fazendo { (capacity * 2) + 2 } sempre
+	 */
+	public static void ensureCapacity() {
+		System.out.println("\nensureCapacity:");
+		
+		StringBuilder sb = new StringBuilder("Teste");
+		System.out.println(sb.capacity()); // Começa com 21: 16 + 5
+		// capacity =  21
+		
+		sb.append("aaaaaaaaaaaaaaaaa"); // 17 + Teste = 22, supera capacity, capacity é aumentada.
+		System.out.println(sb.capacity()); // 2x + 2
+		// capacity =  44
+		
+		sb.append("aaaaaaaaaaaaaaaaaaaaaaa"); // 23 + tam anterior = 45, supera capacity, capacity é aumentada.
+		System.out.println(sb.capacity()); // 2x + 2
+		// capacity =  90
+		
+		sb.append("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"); // 46 + tam anterior = 91, supera capacity, capacity é aumentada.
+		System.out.println(sb.capacity()); // 2x + 2
+		// capacity = 180
+	}
+	
+	
+	/*
 	 * Deleta intervalo, de 0 à n (index)
 	 * start: inclusive
 	 * end: exclusive
@@ -72,7 +131,7 @@ public class StringBuilders {
 	 * Deleta char em determinado index.
 	 */
 	public static void deleteCharAt() {
-		System.out.println("\ndelete:");
+		System.out.println("\ndeleteCharAt:");
 		
 		StringBuilder sb = new StringBuilder("Teste");
 		sb.deleteCharAt(4);
