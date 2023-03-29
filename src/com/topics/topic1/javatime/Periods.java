@@ -1,4 +1,4 @@
-package com.topics.topic1.period;
+package com.topics.topic1.javatime;
 
 import java.time.LocalDate;
 import java.time.Period;

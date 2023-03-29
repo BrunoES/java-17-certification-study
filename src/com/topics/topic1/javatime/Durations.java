@@ -1,4 +1,4 @@
-package com.topics.topic1.durations;
+package com.topics.topic1.javatime;
 
 import java.time.Duration;
 import java.time.LocalTime;
