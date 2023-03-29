@@ -6,6 +6,15 @@ import java.time.Period;
 public class Periods {
 
 	// A Period uses date-based values (years, months, days).
+	/*
+	 * Novas classes da API de datas do Java 8:
+		Period - Armazena um período de tempo com Datas.
+		Represetação: P1970Y4M14D
+		P- Period
+		Y - year
+		M - month
+		D - day
+	 */
 	public static void main(String[] args) {
 		
 		Period p = Period.of(1970, 4, 14);

@@ -25,7 +25,7 @@ public class LocalDateTimes {
 		now.minusMonths(1);
 		now.minusWeeks(1);
 		now.minusYears(1);
-		// Não atualiza o valor
+		// Nï¿½o atualiza o valor
 		
 		LocalTime timeNow = LocalTime.now();
 		System.out.println(timeNow);
@@ -46,7 +46,7 @@ public class LocalDateTimes {
 		// of
 		System.out.println(Instant.ofEpochMilli(50000L));
 		// plus
-		// Irá falhar, pois apenas dias são suportados pelo Instant
+		// Irï¿½ falhar, pois apenas dias sï¿½o suportados pelo Instant
 		// Ex: instantNow.plus(1, ChronoUnit.MONTHS);
 		
 		ZonedDateTime zonedDateTimeNow = ZonedDateTime.now();

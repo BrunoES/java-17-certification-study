@@ -14,7 +14,7 @@ Inválido:
 LocalDate.with:
 localDate = localDate.with(DayOfWeek.TUESDAY);
 
-Neste caso, o método with irá "arredondar" a data para a terça-feira mais próxima da data atual.
+Neste caso, o método with irá "arredondar" a data para a próxima terça-feira mais próxima da data atual.
 
 -----------------
 

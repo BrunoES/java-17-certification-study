@@ -6,6 +6,13 @@ import java.time.LocalTime;
 public class Durations {
 
 	// A Duration measures an amount of time using time-based values (seconds, nanoseconds).
+	/*
+	 * Duration - Armazena um período de tempo com Tempo (hora, minutos, segundos, milisegundos).
+		PT - Duration
+		H - hour
+		M - minute
+		S - second
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Duration ofDays = Duration.ofDays(1);
