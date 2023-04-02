@@ -4,6 +4,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 import java.time.temporal.TemporalField;
 
@@ -14,12 +15,19 @@ public class LocalDates {
 	 */
 	public static void main(String[] args) {
 		plus();
+		format();
 		constructors();
+		parse();
 		with();
 		atTime();
 		compareTo();
 		get();
 		isLeapYear();
+		getDayOfYear();
+		getMonthValue();
+		lengthOfMonth();
+		lengthOfYear();
+		format();
 	}
 	
 	/*
@@ -53,18 +61,46 @@ public class LocalDates {
 		System.out.println(now);
 	}
 	
+	/*
+	 * Formata a data mediante um DateTimeFormatter
+	 */
+	public static void format() {
+		System.out.println("\nformat:");
+		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		LocalDate d1 = LocalDate.now();
+		String dataFormatada = d1.format(dtf);
+		
+		System.out.println(dataFormatada);
+	}
+	
+	/*
+	 * Faz o parse de data mediante String e/ou DateTimeFormatter.
+	 */
+	public static void parse() {
+		System.out.println("\nparse:");
+		
+		LocalDate d1 = LocalDate.parse("2019-12-31");
+		//LocalDate.parse("2019-1-1"); Não compila
+		LocalDate d2 = null;
+		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		d2 = LocalDate.parse("31/12/2019", dtf);
+		
+		System.out.println(d1);
+		System.out.println(d2);
+	}
+	
 	public static void constructors() {
 		System.out.println("\nconstrutores:");
 		
 		// Válido:
 	    LocalDate.of(2019,12,31);
 	    LocalDate.ofYearDay(2019,110);
-	    LocalDate.parse("2019-12-31");
 	    
 	    // Inválido: Não compila
 	    // LocalDate.of(2019, "JANUARY", 1);
 	    // new LocalDate(2019, 1, 1);
-	    // LocalDate.parse("2019-1-1");
 	}
 	
 	/*
@@ -138,5 +174,44 @@ public class LocalDates {
 		System.out.println(LocalDate.now().isLeapYear());
 	}
 	
+	/*
+	 * Retorna o dia do ano com base em um inteiro sequencial;
+	 */
+	public static void getDayOfYear() {
+		System.out.println("\ngetDayOfYear:");
+		
+		LocalDate d1 = LocalDate.now();
+		System.out.println(d1.getDayOfYear());
+	}
+	
+	/*
+	 * Retorna o mês do ano de 1 - 12
+	 */
+	public static void getMonthValue() {
+		System.out.println("\ngetMonthValue:");
+		
+		LocalDate d1 = LocalDate.now();
+		System.out.println(d1.getMonthValue());
+	}
+	
+	/*
+	 * Retorna o comprimeito do mês em dia
+	 */
+	public static void lengthOfMonth() {
+		System.out.println("\nlengthOfMonth:");
+		
+		LocalDate d1 = LocalDate.now();
+		System.out.println(d1.lengthOfMonth());
+	}
+	
+	/*
+	 * Retorna comprimeto do ano em dias
+	 */
+	public static void lengthOfYear() {
+		System.out.println("\nlengthOfYear:");
+		
+		LocalDate d1 = LocalDate.now();
+		System.out.println(d1.lengthOfYear());
+	}
 
 }
