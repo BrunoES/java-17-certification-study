@@ -81,6 +81,10 @@ public class MathApi {
 		// nextUp:
 		double nextUp = Math.nextUp(2.5); // Retorna a casa decimal adjacente ao parâmetro em direação ao infinito.
 		System.out.println(nextUp);
+		
+		// rint:
+		double valueToRint = 175.4;
+		System.out.println(Math.rint(valueToRint)); // >= .5 Arredonda pra cima..... <= 4 Arredonda pra baixo
 	}
 	
 }
