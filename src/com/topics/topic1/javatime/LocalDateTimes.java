@@ -1,9 +1,12 @@
 package com.topics.topic1.javatime;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 
@@ -17,6 +20,8 @@ public class LocalDateTimes {
 		format();
 		parse();
 		get();
+		ofInstant();
+		adjustInto();
 		// Outros comportamentos iguais comuns LocalDate;
 		// Métodos e atributos cumulativos do LocalDate + LocalTime 
 	}
@@ -92,6 +97,33 @@ public class LocalDateTimes {
 		System.out.println(dt1.get(ChronoField.HOUR_OF_DAY));
 		System.out.println(dt1.get(ChronoField.SECOND_OF_DAY));
 		System.out.println(dt1.get(ChronoField.SECOND_OF_MINUTE));
+	}
+	
+	/*
+	 * Create an LocalDateTime from a instant with a specific ZoneId.
+	 */
+	public static void ofInstant() {
+		System.out.println("\nofInstant:");
+		
+		LocalDateTime dt1 = LocalDateTime.ofInstant(Instant.now(), ZoneId.systemDefault());
+		
+		System.out.println(dt1);
+	}
+	
+	/*
+	 * Ajusta um Temporal para utilizar o mesmo horário de outra instância.
+	 */
+	public static void adjustInto() {
+		System.out.println("\nadjustInto:");
+		
+		ZonedDateTime zdtm = ZonedDateTime.now();
+		LocalDateTime dt1 = LocalDateTime.now().plusHours(5L);
+		
+		System.out.println(zdtm);
+		
+		zdtm = (ZonedDateTime) dt1.adjustInto(zdtm);
+		
+		System.out.println(zdtm);
 	}
 	
 

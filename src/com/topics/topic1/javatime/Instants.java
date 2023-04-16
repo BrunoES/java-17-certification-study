@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.Period;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 
@@ -17,6 +18,10 @@ public class Instants {
 		factoryMethods();
 		plusMinus();
 		get();
+		atZone();
+		until();
+		atOffset();
+		isAfterOfBefore();
 	}
 	
 	/*
@@ -95,6 +100,58 @@ public class Instants {
 		System.out.println(now.get(ChronoField.MILLI_OF_SECOND));
 		System.out.println(now.get(ChronoField.NANO_OF_SECOND));
 		System.out.println(now.getLong(ChronoField.INSTANT_SECONDS));
+	}
+	
+	
+	/*
+	 * Convert the instant instance to an specific ZoneId.
+	 */
+	public static void atZone() {
+		System.out.println("\n atZone");
+		
+		Instant now = Instant.now();
+		
+		System.out.println(now.atZone(ZoneId.systemDefault()));
+	}
+	
+	/*
+	 * Return the difference between two Instant, with a specific ChronoUnit.
+	 */
+	public static void until() {
+		System.out.println("\n atZone");
+		
+		Instant now = Instant.now();
+		Instant nowMais5 = Instant.now().plus(5L, ChronoUnit.HOURS);
+		
+		// 5 Horas de diferença
+		System.out.println(now.until(nowMais5, ChronoUnit.HOURS));
+	}
+	
+	/*
+	 * Adiciona offset no horário original
+	 */
+	public static void atOffset() {
+		System.out.println("\n atZone");
+		
+		Instant now = Instant.now();
+		
+		// 5 Horas de diferença
+		System.out.println(now);
+		System.out.println(now.atOffset(ZoneOffset.UTC)); // Mantêm
+		System.out.println(now.atOffset(ZoneOffset.ofHours(5))); // Adiciona 5 horas
+		System.out.println(now.atOffset(ZoneOffset.MIN)); // Diminui 18 horas
+		System.out.println(now.atOffset(ZoneOffset.MAX)); // Aumenta 18 horas
+	}
+
+	public static void isAfterOfBefore() {
+		System.out.println("\n isAfterOfBefore");
+		
+		Instant now = Instant.now();
+		Instant nowMais5 = Instant.now().plus(5L, ChronoUnit.HOURS);
+		
+		
+		System.out.println(now.isAfter(nowMais5));
+		System.out.println(now.isBefore(nowMais5));
 	}
 
 }
