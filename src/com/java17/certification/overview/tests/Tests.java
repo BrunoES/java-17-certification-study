@@ -1,16 +1,18 @@
 package com.java17.certification.overview.tests;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Tests {
 
+	static Double d;
+	
 	public static void main(String[] args) {
-		for (int i = 0; i < 6; i++) {
-			if (i % 3 != 0) {
-			continue;
-			}
-			System.out.println(i);
-			}
+		System.out.println(("" instanceof Object));
+		
+		System.out.println(Tests.d + 1);
+		
+		var arr1 = new int[] {};
+		String[] arr2 = new String[] {};
+		
+		System.out.println(arr1);
+		System.out.println(arr2);
 	}
 }

@@ -7,7 +7,7 @@ public class TextBlocks {
 		// Os text bloks vieram agora para o Java 13:
 		// Text Blocks: Incluido definitivamente na JDK 15.
 		String jsonBlock = """
-					greeting: "Hello,
+				greeting: "Hello,
 					audience; "World",
 					punctuation: "!"
 				""";

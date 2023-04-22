@@ -1,0 +1,50 @@
+_ Não pode mais ser usado como nome de variável sozinho.
+
+==
+
+String arr[200] - Size não é permitido na declaração do array, ou seja, left side.
+
+==
+
+TextBlocks: Tem que começar na outra linha, isso não compila:
+String jsonBlock = """ teste """;
+
+==
+
+TextBlocks: Não é possível um textblock dentro do outro.
+
+==
+
+Declaração de tipo abstrato:
+Valores nulos, não se pode somar.
+Integer i;
+Double j;
+
+System.out.println(i + j);
+
+==
+
+Declaração de arrays:
+var arr1 = new int[] {};
+String[] arr2 = new String[] {};
+
+== 
+
+Float: No java, por padrão todo número fracionado é double, porém com o sufixo f, a gente diz que ele tem que ser float.
+
+==
+
+Variáveis não inicializadas, só podem ser utilizadas em atribuições.
+
+==
+
+null instanceof Object retorna false:
+System.out.println((null instanceof Object)); // false
+System.out.println(("" instanceof Object)); // true
+
+==
+
+Ao tentar somar null + valor, o resultado será um NullPointerException.
+
+==
+

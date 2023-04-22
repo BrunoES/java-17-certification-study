@@ -15,6 +15,7 @@ public class StringBuilders {
 		replace();
 		append();
 		equals();
+		setLength();
 	}
 
 	// reverse: Inverte o conteúdo do StringBuilder
@@ -95,6 +96,7 @@ public class StringBuilders {
 	public static void ensureCapacity() {
 		System.out.println("\nensureCapacity:");
 		
+		// Sempre que o append é chamado, é feito o ensureCapacity sobre o valor
 		StringBuilder sb = new StringBuilder("Teste");
 		System.out.println(sb.capacity()); // Começa com 21: 16 + 5
 		// capacity =  21
@@ -110,6 +112,10 @@ public class StringBuilders {
 		sb.append("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"); // 46 + tam anterior = 91, supera capacity, capacity é aumentada.
 		System.out.println(sb.capacity()); // 2x + 2
 		// capacity = 180
+		
+		// Chama ensureCapacity explicitamente
+		sb.ensureCapacity(10);
+		System.out.println(sb.capacity()); // 2x + 2
 	}
 	
 	
@@ -186,6 +192,20 @@ public class StringBuilders {
 		StringBuilder builder = new StringBuilder(string);
 		System.out.println(string.equals(builder)); // false
 		System.out.println(string.contentEquals(builder)); // true, Valida se o valor é equals, e não o StringBuilder em sí.
+	}
+	
+	/*
+	 * Corta a string até o length especificado
+	 */
+	public static void setLength() {
+		System.out.println("\nsetLength:");
+		
+		var sb = new StringBuilder("Java");
+		
+		sb.setLength(2);
+		
+		System.out.println(sb.length());
+		System.out.println(sb);
 	}
 	
 	
