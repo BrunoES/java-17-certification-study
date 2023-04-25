@@ -48,3 +48,25 @@ Ao tentar somar null + valor, o resultado será um NullPointerException.
 
 ==
 
+Caso tenha uma variável chamada _5, em uma expressão, o valor _5 terá prioridade sobre a variável;
+int _5 = 10;
+int z = _5;
+
+System.out.println(_5 / z);
+
+==
+
+// | = Sem short circuit
+// || = Com short circuit
+
+Boolean b = true;
+if(b || foo.timeConsumingCall()) {
+   //we entered without calling timeConsumingCall()
+}
+
+==
+
+O sinal "-", é o único que pode ser unário e aritimético ao mesmo tempo, ex:
+
+var = - 10   // unário
+var = 10 -5  // aritimético
