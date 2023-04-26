@@ -70,3 +70,42 @@ O sinal "-", é o único que pode ser unário e aritimético ao mesmo tempo, ex:
 
 var = - 10   // unário
 var = 10 -5  // aritimético
+
+==
+
+stdout que formata:
+System.out.format("%d \n", 1);
+System.out.printf("%d \n", 1);
+
+==
+
+Cria Integer através de string, aceita decimal, hexadecimal e octal.
+Integer.decode("1");
+
+==
+
+
+// Comparação Integer x int
+Integer abc = 1;
+int abz = 1;
+System.out.println(abc == abz);
+// Retorna true pq abz é primitivo, então o Java faz o unbox do Integer, e transforma ele em int.
+
+==
+
+Integer i = Integer.parseInt("-127");
+i++; // Retorna um novo Integer incrementado
+Wrapper classes are immuable.
+
+==
+
+Gerador de números randômico criptograficamente seguro.
+java.security.SecureRandom
+
+Factory: Random GeneratorFactory
+
+==
+
+
+
+==

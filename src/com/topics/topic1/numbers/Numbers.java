@@ -39,6 +39,22 @@ public class Numbers {
 		// -10%-3 - O mod não converte o valor para positivo ou negativo, não há "jogo de sinal"
 		System.out.println(-10 % -3);
 		
+		
+		// Truncate de float e formatação:
+		var v1 = 7.77;
+		var v2 = 8.67;
+		var v3 = 9.97;
+		System.out.printf("%.1f %.1f %.1f", v1, v2 , v3);
+		
+		// Cria Integer através de string, aceita decimal, hexadecimal e octal.
+		Integer.decode("1");
+		
+		
+		// Comparação Integer x int
+		Integer abc = 1;
+		int abz = 1;
+		System.out.println(abc == abz);
+		// Retorna true pq abz é primitivo, então o Java faz o unbox do Integer, e transforma ele em int.
 	}	
 
 }
