@@ -106,6 +106,36 @@ Factory: Random GeneratorFactory
 
 ==
 
+Switch case can accept variables that can be automatically promoted to an int.
+Não inclui: float, double, long.
 
+==
+
+Java TreeSet:
+Java TreeSet class implements the Set interface that uses a tree for storage
+Não permite registro duplicado.
+
+==
+
+Pattern mathing não suporta tipos primitivos.
+
+==
+
+Abstract and syncronized cannot stay together, a method cannot be abstract and synchronized at the same time.
+
+==
+
+ArrayList.trimtoSize():
+The trimToSize() method of ArrayList in Java trims the capacity of an ArrayList instance to be the list’s current size. This method is used to trim an ArrayList instance to the number of elements it contains.
+
+==
+
+Function.identify
+Always return the value received by parameter;
+
+==
+
+try-with-resources:
+Resources are closed in the reverse order of their creation;
 
 ==
