@@ -4,6 +4,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 
@@ -27,6 +28,7 @@ public class LocalDates {
 		lengthOfMonth();
 		lengthOfYear();
 		format();
+		until();
 	}
 	
 	/*
@@ -212,5 +214,19 @@ public class LocalDates {
 		LocalDate d1 = LocalDate.now();
 		System.out.println(d1.lengthOfYear());
 	}
+	
+	/*
+	 * Retorna um Period entre dois LocalDates
+	 */
+	public static void until() {
+		System.out.println("\nuntil:");
+		
+		LocalDate d1 = LocalDate.of(2023, 02, 27);
+		LocalDate d2 = LocalDate.of(2023, 03, 27);
+		Period p1 = d1.until(d2);
+		
+		System.out.println(p1);
+	}
+
 
 }

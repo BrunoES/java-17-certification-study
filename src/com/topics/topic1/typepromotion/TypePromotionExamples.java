@@ -30,5 +30,10 @@ public class TypePromotionExamples {
        
         // method call with a string as parameter
         method("Geeks for Geeks");
+        
+        // if: Neste caso, 5 é promovido à 5.0, int promovido à float.
+        int a = 5;
+        float b = 5.5f;
+        if(a == b) System.out.println("a = b");
     }
 }

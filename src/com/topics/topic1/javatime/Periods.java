@@ -75,6 +75,12 @@ public class Periods {
 		// Setar periodo à um LocalDate
 		l1.plus(p11);
 		System.out.println(1);
+		
+		// Normalized: Normaliza a formatação, por exemplo, de 1 ano e 15 meses para 2 anos e 3 meses.
+		Period pn1 = Period.of(1, 15, 1); // P1Y15M1D
+		System.out.println(pn1);
+		Period pn2 = pn1.normalized();
+		System.out.println(pn2);
 	}
 
 }

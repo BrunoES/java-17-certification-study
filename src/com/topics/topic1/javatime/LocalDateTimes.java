@@ -9,6 +9,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
 
 /*
  * https://www.javatpoint.com/java-localdatetime
@@ -22,6 +23,7 @@ public class LocalDateTimes {
 		get();
 		ofInstant();
 		adjustInto();
+		truncatedTo();
 		// Outros comportamentos iguais comuns LocalDate;
 		// Métodos e atributos cumulativos do LocalDate + LocalTime 
 	}
@@ -124,6 +126,22 @@ public class LocalDateTimes {
 		zdtm = (ZonedDateTime) dt1.adjustInto(zdtm);
 		
 		System.out.println(zdtm);
+	}
+	
+	
+	/*
+	 * Trunca o atributo do LocalDateTime passada pelo parâmetro ChronoUnit.
+	 */
+	public static void truncatedTo() {
+		System.out.println("\ntruncatedTo:");
+		
+		var ld = LocalDate.of(2015, 2, 17);
+		var lt = LocalTime.of(15, 50);
+		var ldt = LocalDateTime.of(ld, lt);
+		ldt = ldt.truncatedTo(ChronoUnit.HOURS);
+		
+		// Print 15:00 em vez de 15:50
+		System.out.println(ldt);
 	}
 	
 

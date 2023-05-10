@@ -137,5 +137,112 @@ Always return the value received by parameter;
 
 try-with-resources:
 Resources are closed in the reverse order of their creation;
+Todo resource IO ou Connection com banco é fechado antes de qualquer (final do try) catch ou finally em um try-with-resources.
+
+==
+
+Poder ter um try-with-resources sem catch ou finally:
+
+try (FileInputStream fis = new FileInputStream("")) {
+	System.out.println("e");
+} 
+
+Não poder ter um try normal sem catch ou finally:
+
+try {
+	System.out.println("e");
+}
+
+==
+
+Uma record class nunca pode extender de outra, ela sempre extende de java.lang.Record.
+
+==
+
+Case:
+ 
+Em um swtich case tradicional, caso um case dê match, dodos os cases abaixo serão executados, até encontrar um break;
+
+==
+
+Uma interface não pode sobrescrever um método equals ou hashCode por exemplo.
+
+==
+
+Não pode ter tipo primitivo em cases com pattern matching.
+
+==
+
+Desde o Java 8, é permitido ter classes locais dentro de métodos que acessam variáveis locais final do método onde estão declaradas.
+
+==
+
+Stream peek:
+Stream peek() method is an intermediate operation.
+It returns a Stream consisting of the elements of current stream.
+It additionally perform the provided action on each element as elements.
+For parallel stream pipelines, the action may be called at whatever time and in whatever thread the element is made available by the upstream operation.
+If the action modifies shared state, it is itself responsible for providing the required synchronization.
+peek() exists mainly to support debugging, where we want to see the elements as they flow past a certain point in a pipeline.
+
+==
+
+Declaração de arrys?
+
+var [] i = new int[2] {1, 2}; = Incorreto, se você fornece o tamanho, não fornece os elementos para inicialização, ou vice versa.
+var [] i = new int[2];                       - Correto
+var [] i = new int[] {1, 2};                 - Correto
+var i = new int[][] { {1, 2, 3}, {4, 5, 6} } - Correto
+
+==
+
+Default methods de interfaces não podem ser sobrescritos.
+
+==
+
+Supressed Exceptions?
+
+==
+
+if (o instanceof String s) {
+ // Variável s só existe no bloco IF
+} else {
+
+}
+
+==
+
+switch excperessions não precisam de break;
+
+==
+
+BinaryOperator.maxBy(método utiliado para definir o max);
+
+==
+
+ThreeMap
+
+pollFirstEntry - Remove primeiro elemento, ordenado crescentemente pela chave String.
+pollLastEntry - Remove primeiro elemento, ordenado crescentemente pela chave String.
+
+==
+
+Classes não mapeadas numa sealed class podem extendê-la, desde que sejam final.
+
+==
+
+Deste o java 7 apenas tipos primitivos que podem ser promovidos à int são aceitos no switch case.
+byte
+short
+char
+int
+enum
+String
+
+Logo, long, float e double, não são aceitos.
+
+==
+
+
 
 ==
