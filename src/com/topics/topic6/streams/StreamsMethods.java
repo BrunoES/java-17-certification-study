@@ -14,6 +14,7 @@ public class StreamsMethods {
 		sorted();
 		map();
 		flatMap();
+		filter();
 	}
 	
 	
@@ -126,6 +127,21 @@ public class StreamsMethods {
 		
 		// Retorna um Stream de Stream de char
 		s1.flatMap(s -> s.chars().mapToObj(c -> (char)c)).forEach(System.out::print);
+	}
+	
+	/*
+	 * 
+	 */
+	public static void filter() {
+		System.out.println("\n filter");
+		
+		Stream<String> s1 = Stream.of("Teste1", "Teste2", "Teste3");
+		s1.filter(s -> s.startsWith("T")).forEach(System.out::print);
+		
+		System.out.println();
+		
+		Stream<String> s2 = Stream.of("Teste4", "Teste5", "Teste6");
+		s2.filter(s -> s.startsWith("T") && (s.length() == 6)).forEach(System.out::print);
 	}
 
 }
