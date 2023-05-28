@@ -32,7 +32,7 @@ public class StreamsMethods {
 		
 		// com Parallel Stream, da na mesma.
 		List<String> latters = Arrays.asList("a", "b", "c");
-		String concat = latters.parallelStream().reduce("", String::concat);
+		String concat = latters.parallelStream().reduce("z", String::concat);
 		System.out.println(concat);
 	}
 	
