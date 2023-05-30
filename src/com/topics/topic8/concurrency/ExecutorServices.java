@@ -11,6 +11,10 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+/*
+ * https://www.baeldung.com/java-executor-service-tutorial
+ * https://www.digitalocean.com/community/tutorials/java-lock-example-reentrantlock
+ */
 public class ExecutorServices {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException, TimeoutException {
