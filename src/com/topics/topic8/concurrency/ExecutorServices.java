@@ -170,6 +170,7 @@ public class ExecutorServices {
 		
 		// Demora 2 seg para começar, e depois começa a executar as threds, quando uma terminar, aguardará 500 milliseconds para começar a próxima;
 		scheduledExecutor.scheduleWithFixedDelay(runnableTask, 2000, 500, TimeUnit.MILLISECONDS);
+		
 	}
 	
 }

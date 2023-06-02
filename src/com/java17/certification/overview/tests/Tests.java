@@ -6,10 +6,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.concurrent.Callable;
 import java.util.function.IntConsumer;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 import java.util.stream.IntStream;
+
+import com.topics.topic8.concurrency.TestCallable;
 
 public class Tests {
 
@@ -87,5 +90,14 @@ public class Tests {
 		Object obj;
 		
 		Files.find(null, a, null, null);
+		
+		
+		// Forma de instanciar:
+		Callable call = TestCallable::new;
+		
+		
+		
+		// Retorna o mínimo valor:
+		Integer.min(0, 1);
 	}
 }
