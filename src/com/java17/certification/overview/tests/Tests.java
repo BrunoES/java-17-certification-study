@@ -99,5 +99,17 @@ public class Tests {
 		
 		// Retorna o mínimo valor:
 		Integer.min(0, 1);
+		
+		switch("a") {
+			case "x" -> System.out.println("x"); 
+		}
+		
+		Object o = new Object();
+		switch (o) {
+			case null -> System.out.println("null");
+			case String s  -> System.out.println("String");
+			default -> System.out.println("a");
+		}
+		
 	}
 }

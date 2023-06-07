@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -18,9 +19,25 @@ import java.util.concurrent.TimeoutException;
 public class ExecutorServices {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException, TimeoutException {
+		executor();
 		overview();
 		futures();
 		scheduledExecutorService(); 
+	}
+	
+	public static void executor() {
+		System.out.println("\n executor");
+		
+		Runnable runnableTask = () -> {
+		    try {
+		        TimeUnit.MILLISECONDS.sleep(300);
+		    } catch (InterruptedException e) {
+		        e.printStackTrace();
+		    }
+		};
+		
+		Executor exec = new InvokerExecutor();
+		exec.execute(runnableTask);
 	}
 	
 	public static void overview() {
