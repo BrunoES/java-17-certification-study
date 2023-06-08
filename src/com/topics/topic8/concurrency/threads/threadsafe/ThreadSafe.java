@@ -72,6 +72,7 @@ public class ThreadSafe {
 		        }
 		    }
 		}
+		
 	}
 	
 	// Calcula fatorial
